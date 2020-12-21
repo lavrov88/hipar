@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <title>Видии - подстдекадентские</title>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <aside class="sidebar" id="sidebar">
+            <ul class="sidebar-menu">
+                <li><a class="sidebar-menu-item" id="sidebarIndex" href="index.html"><span class="sidebar-menu-item-text">На главную</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarVideos" href="videos.html"><span class="sidebar-menu-item-text">Видии</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarPhotos" href="photos.html"><span class="sidebar-menu-item-text">Фоты</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarVerses" href="verses.html"><span class="sidebar-menu-item-text">Стихи</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarScreams" href="screams.html"><span class="sidebar-menu-item-text">Крики <span class="smaller">(начало всего)</span></span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarDrawings" href="drawings.html"><span class="sidebar-menu-item-text">Рисунки</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarHistory" href="history.html"><span class="sidebar-menu-item-text">История декадентства</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarSymbols" href="symbols.html"><span class="sidebar-menu-item-text">Символы декадентства</span></a></li>
+            </ul>
+        
+            <ul class="sidebar-links">
+                <li class="sidebar-links-item">
+                    <a class="sidebar-links-a" href="http://shilo-mylo-man.livejournal.com/" target="_blank">
+                        <img class="sidebar-links-image" src="assets/images/sidebar/lj_logo_300.png" alt="LJ">
+                        <div class="sidebar-links-text">Электроистории от Шило-Мыло Человека</div>
+                    </a>
+                </li>
+                <li class="sidebar-links-item">
+                    <a class="sidebar-links-a" href="https://www.youtube.com/user/ebrilishe" target="_blank">
+                        <img class="sidebar-links-image" src="assets/images/sidebar/youtube_logo_300.png" alt="LJ">
+                        <div class="sidebar-links-text">Официальный канал хипаря</div>
+                    </a>
+                </li>
+            </ul>
+        </aside> 
+        <div class="page-container" id="pageContainer">
+
+            <header class="header">
+                <div class="header-left">
+                    <a class="main-logo-href" href="index.html">
+                        <img class="main-logo" src="assets/images/header/logo.png" alt="Hipar Intertament">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <div class="burger-block" id="burgerButton"><span></span></div>
+                </div>
+            
+                <script>
+                    let burgerButton = document.getElementById("burgerButton");
+                    let sidebar = document.getElementById("sidebar");
+                    let pageContainer = document.getElementById("pageContainer");
+                    let body = document.body;
+                    burgerButton.addEventListener("click", function() {
+                        if (burgerButton.classList.contains('active')) {
+                            burgerButton.classList.remove('active');
+                            sidebar.classList.remove('active');
+                            pageContainer.classList.remove('darken');
+                            body.classList.remove('lock');
+                        } else {
+                            burgerButton.classList.add('active');
+                            sidebar.classList.add('active');
+                            pageContainer.classList.add('darken');
+                            body.classList.add('lock');
+                        }
+                    });
+                </script>
+                
+            </header>
+
+            <div class="content-container">
+                
+                <h2 class="page-title">Видии</h2>
+                
+                <div class="videos-tabs-selection">
+                    <div class="videos-tabs-string">
+                        <a class="videos-tabs-item" id="videosClassic" href="videos-classic.html">Классика</a>
+                        <a class="videos-tabs-item" id="videosApogee" href="videos-apogee.html">Апогей декаденства</a>
+                        <a class="videos-tabs-item" id="videosPostdecadence" href="videos-postdecadence.html">Постдекаденские видии</a>
+                    </div>
+                    <div class="videos-tabs-string">
+                        <a class="videos-tabs-item" id="videosExperiment" href="videos-experiment.html">Экспериментальный период</a>
+                        <a class="videos-tabs-item" id="videosRenaissance" href="videos-renaissance.html">Декадентский реннесанс</a>
+                    </div>
+                </div>
+                <div class="post post-video">
+                    <div class="post-content">
+                        
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality"> <!-- дави сука -->
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/vCgOG5yO5Wc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p class="vidia-name"></p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/postdecadence/salfetochnik.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Салфеточник</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3">
+                                <video class="vidia" src="assets/resources/videos/postdecadence/volevoy_krik_poezda.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Волевой крик поезда</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3">
+                                <video class="vidia" src="assets/resources/videos/postdecadence/ad.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Ад</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3">
+                                <video class="vidia" src="assets/resources/videos/postdecadence/doctor.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Доктор</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/postdecadence/s_nebes.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">С небес</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality"> <!-- палкой -->
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/wEU_E5DfNwM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p class="vidia-name"></p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality"> <!-- удар по мегафонам -->
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/sb6Vn91AjMY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p class="vidia-name"></p>
+                        </div>        
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality"> <!-- коробка побежала -->
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/IjelJYfKT10" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p class="vidia-name"></p>
+                        </div>        
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality"> <!-- бунтеиха -->
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/A9p0X4zlmts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p class="vidia-name"></p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3">
+                                <video class="vidia" src="assets/resources/videos/postdecadence/dom_petrosyana.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Дом Петросяна</p>
+                        </div>
+                        
+                    </div> <!-- /POST CONTENT -->
+                </div> <!-- /POST -->
+                
+                <ul class="page-selector">
+                    <li><a class="page-selector-item" href="videos-postdecadence.html"><</a></li>
+                    <li><a class="page-selector-item" href="videos-postdecadence.html">1</a></li>
+                    <li><a class="page-selector-item page-selector-item-active" href="videos-postdecadence-2.html">2</a></li>
+                    <li><a class="page-selector-item page-selector-item-disabled" href="videos-postdecadence-2.html">></a></li>
+                </ul>
+                
+                <script> //Selecting of active item in sidebar
+                    let element = document.getElementById("sidebarVideos");
+                    element.classList.add("active");
+                    let section = document.getElementById("videosPostdecadence");
+                    section.classList.add("active");
+                </script>
+            </div>
+
+            <footer class="footer">
+                    <div class="footer-content">
+                        <span class="copyright-1">© Hipar Intertament, 2004-2020</span><span class="copyright-2">Тебе пиздец!</span>
+                    </div>
+            </footer>
+
+        </div> 
+    </div>
+
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

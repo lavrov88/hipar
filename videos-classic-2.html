@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <title>Видии - классика</title>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <aside class="sidebar" id="sidebar">
+            <ul class="sidebar-menu">
+                <li><a class="sidebar-menu-item" id="sidebarIndex" href="index.html"><span class="sidebar-menu-item-text">На главную</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarVideos" href="videos.html"><span class="sidebar-menu-item-text">Видии</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarPhotos" href="photos.html"><span class="sidebar-menu-item-text">Фоты</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarVerses" href="verses.html"><span class="sidebar-menu-item-text">Стихи</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarScreams" href="screams.html"><span class="sidebar-menu-item-text">Крики <span class="smaller">(начало всего)</span></span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarDrawings" href="drawings.html"><span class="sidebar-menu-item-text">Рисунки</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarHistory" href="history.html"><span class="sidebar-menu-item-text">История декадентства</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarSymbols" href="symbols.html"><span class="sidebar-menu-item-text">Символы декадентства</span></a></li>
+            </ul>
+        
+            <ul class="sidebar-links">
+                <li class="sidebar-links-item">
+                    <a class="sidebar-links-a" href="http://shilo-mylo-man.livejournal.com/" target="_blank">
+                        <img class="sidebar-links-image" src="assets/images/sidebar/lj_logo_300.png" alt="LJ">
+                        <div class="sidebar-links-text">Электроистории от Шило-Мыло Человека</div>
+                    </a>
+                </li>
+                <li class="sidebar-links-item">
+                    <a class="sidebar-links-a" href="https://www.youtube.com/user/ebrilishe" target="_blank">
+                        <img class="sidebar-links-image" src="assets/images/sidebar/youtube_logo_300.png" alt="LJ">
+                        <div class="sidebar-links-text">Официальный канал хипаря</div>
+                    </a>
+                </li>
+            </ul>
+        </aside> 
+        <div class="page-container" id="pageContainer">
+
+            <header class="header">
+                <div class="header-left">
+                    <a class="main-logo-href" href="index.html">
+                        <img class="main-logo" src="assets/images/header/logo.png" alt="Hipar Intertament">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <div class="burger-block" id="burgerButton"><span></span></div>
+                </div>
+            
+                <script>
+                    let burgerButton = document.getElementById("burgerButton");
+                    let sidebar = document.getElementById("sidebar");
+                    let pageContainer = document.getElementById("pageContainer");
+                    let body = document.body;
+                    burgerButton.addEventListener("click", function() {
+                        if (burgerButton.classList.contains('active')) {
+                            burgerButton.classList.remove('active');
+                            sidebar.classList.remove('active');
+                            pageContainer.classList.remove('darken');
+                            body.classList.remove('lock');
+                        } else {
+                            burgerButton.classList.add('active');
+                            sidebar.classList.add('active');
+                            pageContainer.classList.add('darken');
+                            body.classList.add('lock');
+                        }
+                    });
+                </script>
+                
+            </header>
+
+            <div class="content-container">
+                
+                <h2 class="page-title">Видии</h2>
+                
+                <div class="videos-tabs-selection">
+                    <div class="videos-tabs-string">
+                        <a class="videos-tabs-item" id="videosClassic" href="videos-classic.html">Классика</a>
+                        <a class="videos-tabs-item" id="videosApogee" href="videos-apogee.html">Апогей декаденства</a>
+                        <a class="videos-tabs-item" id="videosPostdecadence" href="videos-postdecadence.html">Постдекаденские видии</a>
+                    </div>
+                    <div class="videos-tabs-string">
+                        <a class="videos-tabs-item" id="videosExperiment" href="videos-experiment.html">Экспериментальный период</a>
+                        <a class="videos-tabs-item" id="videosRenaissance" href="videos-renaissance.html">Декадентский реннесанс</a>
+                    </div>
+                </div>
+                <div class="post post-video">        
+                    <div class="post-content">
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/russian.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Русский</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/shapky-1.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Шапку спиздели</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/shapky-2.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Шапку спиздели 2</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/pizdato.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Как на улице то пиздато!</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/hipar_jackson.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Хипарь Джексон</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/hipar_up_in_smoke.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Хипарь укурился</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/smack_my_bitch_up.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Smack my bitch up</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/vskritie.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Вскрытие</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/zavalil_dvoih.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Завалил двоих</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/perfect_work.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Отличная работа</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/ydarilsa.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Ударился</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/pizza.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Пицца</p>
+                        </div>
+                        <div class="vidia-container">
+                            <div class="embed-4-3 low-quality">
+                                <video class="vidia" src="assets/resources/videos/classic/slipknot.mp4" controls="controls"></video>
+                            </div>
+                            <p class="vidia-name">Слипкнот</p>
+                        </div>
+                
+                        <div class="vidias-download-buttons">
+                            <a class="vidias-download-buttons-item" href="assets/resources/videos/classic/best.zip">
+                                СКАЧАТЬ ВСЕ ВИДИИ ОДНИМ АРХИВОМ
+                            </a>
+                            <a class="vidias-download-buttons-item" href="assets/resources/videos/classic/other.zip">
+                                СКАЧАТЬ ОСТАЛЬНЫЕ КЛАССИЧЕСКИЕ ВИДИИ<br>
+                                <span class="vidias-download-button-little-text">(!!) 80 штук</span>
+                            </a>
+                        </div>
+                
+                    </div> <!-- /POST CONTENT -->
+                </div> <!-- /POST -->
+                
+                <ul class="page-selector">
+                    <li><a class="page-selector-item" href="videos-classic.html"><</a></li>
+                    <li><a class="page-selector-item" href="videos-classic.html">1</a></li>
+                    <li class="page-selector-item page-selector-item-active">2</li>
+                    <li class="page-selector-item page-selector-item-disabled">></li>
+                
+                </ul>
+                
+                <script> //Selecting of active item in sidebar
+                    let element = document.getElementById("sidebarVideos");
+                    element.classList.add("active");
+                    let section = document.getElementById("videosClassic");
+                    section.classList.add("active");
+                </script>
+            </div>
+
+            <footer class="footer">
+                    <div class="footer-content">
+                        <span class="copyright-1">© Hipar Intertament, 2004-2020</span><span class="copyright-2">Тебе пиздец!</span>
+                    </div>
+            </footer>
+
+        </div> 
+    </div>
+
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
