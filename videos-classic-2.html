@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="">
     
-    <title>Видии - классика</title>
+    <title>Видии - классика (часть 2)</title>
 </head>
 <body>
 
@@ -29,6 +29,7 @@
                 <li><a class="sidebar-menu-item" id="sidebarDrawings" href="drawings.html"><span class="sidebar-menu-item-text">Рисунки</span></a></li>
                 <li><a class="sidebar-menu-item" id="sidebarHistory" href="history.html"><span class="sidebar-menu-item-text">История декадентства</span></a></li>
                 <li><a class="sidebar-menu-item" id="sidebarSymbols" href="symbols.html"><span class="sidebar-menu-item-text">Символы декадентства</span></a></li>
+                <li><a class="sidebar-menu-item" id="guestBook" href="guestbook.html"><span class="sidebar-menu-item-text">Гостевая</span></a></li>
             </ul>
         
             <ul class="sidebar-links">
@@ -45,7 +46,89 @@
                     </a>
                 </li>
             </ul>
+        
+            <div class="quote-container">
+                <blockquote class="quote" id="quote">
+                    <p class="quote-text" id="quoteText">Я чертов ЕВРЕЙ!</p>
+                    <cite class="quote-author" id="quoteAuthor">Хипарь</cite>
+                </blockquote>
+            </div>
         </aside> 
+        
+        <script>
+            let quoteArr = [];
+            quoteArr[0] = {text: "Бунт! Это адский бунт! АААА!!", author: "декадентское выражение"};
+            quoteArr[1] = {text: "В этом доме жил хипарь", author: "голос за кадром"};    
+            quoteArr[3] = {text: "Вася осторожно!!!", author: "голос за кадром"};    
+            quoteArr[4] = {text: "Вы все дерьмо!", author: "Хипарь"};    
+            quoteArr[5] = {text: "Дави, сука!", author: "враги поезда"};
+            quoteArr[6] = {text: "Да на хую я вертел твое время!! Ты посмотри как на улице то пиздато!!!", author: "прохожий на улице"};    
+            quoteArr[7] = {text: "Ебись конём рвань!!!", author: "голос из телефона"};
+            quoteArr[8] = {text: "Еврей украл мои носки!", author: "жертва еврея"};    
+            quoteArr[9] = {text: "Здравствуйте, ребята!", author: "ОБЖшник"};
+            quoteArr[10] = {text: "Знаеш Лёня, вот меня после санатория пчёлы вообще не кусают", author: "кореш Лёни"};    
+            quoteArr[11] = {text: "Моя кожа рвётся на куски!!", author: "Хипарь"};    
+            quoteArr[12] = {text: "Не удобно, нет размаха...", author: "клоун с доской"};
+            quoteArr[13] = {text: "О кабан, стели фраера", author: "корещ кабана"};        
+            quoteArr[14] = {text: "Отправляйтесь в ад!", author: "Хипарь"};
+            quoteArr[15] = {text: "Ну это уже просто какое то хамство...", author: "тип с бородой"};
+            quoteArr[16] = {text: "Пацаны вы че то не поделили??", author: "голос за кадром"};    
+            quoteArr[17] = {text: "Перчатку спиздели!", author: "терпила"}; 
+            quoteArr[18] = {text: "Слыш парниш, не ушатаеш вон того типа за сотыгу?", author: "мутный тип"};
+            quoteArr[19] = {text: "Слыш фраер, хавку жопиш?", author: "блатарь"};
+            quoteArr[20] = {text: "Стой СУКА!!", author: "Хипарь"};
+            quoteArr[21] = {text: "Стоять блять!!", author: "мент в штатском"};
+            quoteArr[22] = {text: "Так, несанкционированная продажа ручек. Это статья 118", author: "мент в штатском"};    
+            quoteArr[23] = {text: "Твой брат чорт ****, ПИТУХ!", author: "отжиматель мобил"};    
+            quoteArr[24] = {text: "Ты не с тем связался, парень", author: "мстительный тип"};   
+            quoteArr[25] = {text: "УООООААААА!!", author: "бунтарский крик"};    
+            quoteArr[26] = {text: "Уёбки! Пидоры!!", author: "терпила в лесу"};     
+            quoteArr[27] = {text: "Шапку спиздели!!!", author: "терпила"};    
+            quoteArr[28] = {text: "Это 422. Срало не отпидорено. Высылайте халдея.", author: "турист"};
+            quoteArr[29] = {text: "Я вас всех ВЗЪЕБУ!", author: "Хипарь"};
+            quoteArr[30] = {text: "Я ЧЕРТОВ еврей!", author: "Хипарь"};
+        
+            let i = 0;
+            function randomize() {
+                i = Math.floor(Math.random() * quoteArr.length);
+                console.log(i);
+            }
+        
+            function writeQuote() {
+                let quoteText = document.getElementById('quoteText');
+                let quoteAuthor = document.getElementById('quoteAuthor');        
+                quoteText.innerHTML = quoteArr[i].text;
+                quoteAuthor.innerHTML = quoteArr[i].author;
+            }
+        
+            function writeNewQuote() {
+                randomize();
+                writeQuote();
+            }
+            writeNewQuote();
+        
+            function quoteFadeIn() {
+                quote.classList.add('fade-in');
+                quote.classList.remove('fade-out');
+                writeNewQuote();
+            }
+        
+            function quoteNoFade() {
+                quote.classList.remove('fade-in');
+                let click = new Audio();
+                click.src = "assets/resources/click.mp3";
+                click.autoplay = true;
+            }
+        
+            function quoteTransform() {
+                quote.classList.add('fade-out');
+                setTimeout(quoteFadeIn, 100);
+                setTimeout(quoteNoFade, 150);
+            }
+        
+            let quote = document.getElementById("quote");
+            quote.addEventListener("click", quoteTransform);
+        </script>
         <div class="page-container" id="pageContainer">
 
             <header class="header">
