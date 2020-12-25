@@ -473,7 +473,7 @@ strong {
     flex-direction: column;
     transition: all 0.3s ease;
     background-color: #202020;
-    padding: calc(12rem + 2rem) 2rem 2rem;
+    padding: calc(12rem + 1rem) 2rem 2rem;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
 }
 
@@ -516,7 +516,7 @@ strong {
     display: flex;
     -ms-flex-align: stretch;
     align-items: stretch;
-    margin-top: 4rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
