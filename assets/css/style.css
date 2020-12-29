@@ -418,7 +418,6 @@ strong {
     justify-content: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 1rem;
     height: 12rem;
     background-color: #000;
     position: relative;
@@ -427,11 +426,54 @@ strong {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
+.header-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  /* background-image: url(/assets/images/header/1.jpg);
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat; */
+}
+
+.header-back-img {
+    margin: 0 auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 100%;
+    max-width: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
 .header-left {
     display: block;
     -ms-flex-positive: 1;
     flex-grow: 1;
     height: 100%;
+    z-index: 20;
+    padding: 1rem;
+    background-color: #000;
+    transition: background-color 0.1s linear, -webkit-transform 0.3s ease-in 0.3s;
+    transition: background-color 0.1s linear, transform 0.3s ease-in 0.3s;
+    transition: background-color 0.1s linear, transform 0.3s ease-in 0.3s, -webkit-transform 0.3s ease-in 0.3s;
+}
+
+.header-left:hover {
+    background-color: #1a1a1a;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    transition: background-color 0.2s linear, -webkit-transform 0.3s ease 1.5s;
+    transition: background-color 0.2s linear, transform 0.3s ease 1.5s;
+    transition: background-color 0.2s linear, transform 0.3s ease 1.5s, -webkit-transform 0.3s ease 1.5s;
+}
+
+.header-left:hover .main-logo {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .main-logo-href {
@@ -447,16 +489,9 @@ strong {
     max-width: 100%;
     max-height: 100%;
     margin: 0 auto;
-    transition: all 0.5s ease-out;
-}
-
-.main-logo:hover {
-    transition: opacity 0.2s ease, -webkit-transform 0.3s ease;
-    transition: transform 0.3s ease, opacity 0.2s ease;
-    transition: transform 0.3s ease, opacity 0.2s ease, -webkit-transform 0.3s ease;
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    opacity: 0.9;
+    transition: -webkit-transform 0.2s ease;
+    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
 .sidebar {
@@ -516,8 +551,8 @@ strong {
     display: flex;
     -ms-flex-align: stretch;
     align-items: stretch;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .sidebar-links-item {
@@ -547,8 +582,8 @@ strong {
 }
 
 .sidebar-links-image {
-    width: 5rem;
-    height: 5rem;
+    width: 4.2rem;
+    height: 4.2rem;
     border-radius: 50%;
     margin-bottom: 0.5rem;
 }
@@ -592,7 +627,7 @@ strong {
     position: absolute;
     top: 0.1rem;
     left: 0.7rem;
-    color: #9f9f9f;
+    color: #6c6c6c;
     font-family: serif;
     font-size: 4rem;
 }
@@ -601,7 +636,7 @@ strong {
     content: "";
     position: absolute;
     width: 2px;
-    background-color: #9f9f9f;
+    background-color: #6c6c6c;
     left: 3.3rem;
     top: 0.8rem;
     bottom: 0.8rem;
@@ -609,6 +644,7 @@ strong {
 
 .quote p {
     margin-bottom: 0.8rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: #ccc;
 }
@@ -616,7 +652,7 @@ strong {
 .quote cite {
     display: block;
     text-align: right;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #9f9f9f;
     text-transform: uppercase;
@@ -634,8 +670,8 @@ strong {
 
 .quote.fade-in {
     transition: all 0s;
-    -webkit-transform: translateY(400%);
-    transform: translateY(400%);
+    -webkit-transform: translateY(500%);
+    transform: translateY(500%);
 }
 
 .footer {
@@ -761,7 +797,8 @@ strong {
 .verse-separator {
     font-size: 2rem;
     color: #ffff00;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
+    margin-left: 2rem;
 }
 
 .post-photos {
@@ -1094,48 +1131,60 @@ strong {
 .burger-block {
     display: none;
     position: relative;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    width: 4rem;
+    height: 3.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}
+
+.burger-button {
+    display: block;
     width: 4rem;
     height: 3rem;
 }
 
-.burger-block.active:before {
+.burger-button.active:before {
     top: calc(50% - 2px);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     background-color: #d80000;
 }
 
-.burger-block.active:after {
+.burger-button.active:after {
     top: calc(50% - 2px);
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     background-color: #d80000;
 }
 
-.burger-block.active span {
+.burger-button.active span {
     -webkit-transform: scale(0);
     transform: scale(0);
 }
 
-.burger-block:before, .burger-block:after, .burger-block span {
+.burger-button:before, .burger-button:after, .burger-button span {
     content: '';
     background-color: #ffff00;
     position: absolute;
-    width: 100%;
+    width: 80%;
     height: 4px;
-    left: 0;
+    left: 10%;
     transition: all 0.3s ease;
 }
 
-.burger-block::before {
-    top: 0;
+.burger-button::before {
+    top: 15%;
 }
 
-.burger-block::after {
-    bottom: 0;
+.burger-button::after {
+    bottom: 15%;
 }
 
-.burger-block span {
+.burger-button span {
     top: calc(50% - 2px);
 }
 
@@ -1161,7 +1210,6 @@ strong {
         position: fixed;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        padding: 0.5rem;
         height: 6rem;
         width: 100%;
         z-index: 1020;
@@ -1171,9 +1219,23 @@ strong {
         max-height: 100%;
     }
 
+    .header-left {
+        padding: 0.8rem;
+    }
+
+    .header-left:hover {
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+
     .header-right {
-        margin-left: 2rem;
-        margin-right: 1rem;
+        display: -ms-flexbox;
+        display: flex;
+        height: 100%;
+        z-index: 1020;
+        -ms-flex-align: center;
+        align-items: center;
+        background-color: #000;
     }
 
     .burger-block {
