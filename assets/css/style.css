@@ -426,6 +426,20 @@ strong {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
+.header:hover .header-left {
+    background-color: #1a1a1a;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    transition: background-color 0.2s linear, -webkit-transform 0.3s ease 1.5s;
+    transition: background-color 0.2s linear, transform 0.3s ease 1.5s;
+    transition: background-color 0.2s linear, transform 0.3s ease 1.5s, -webkit-transform 0.3s ease 1.5s;
+}
+
+.header:hover .main-logo {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
 .header-back {
     position: absolute;
     top: 0;
@@ -456,20 +470,15 @@ strong {
     transition: background-color 0.1s linear, -webkit-transform 0.3s ease-in 0.3s;
     transition: background-color 0.1s linear, transform 0.3s ease-in 0.3s;
     transition: background-color 0.1s linear, transform 0.3s ease-in 0.3s, -webkit-transform 0.3s ease-in 0.3s;
-}
+  /*     &:hover {
+        background-color: lighten($black-header, 10%);
+        transform: translateY(-100%);
+        transition: background-color 0.2s linear, transform 0.3s ease 1.5s;
 
-.header-left:hover {
-    background-color: #1a1a1a;
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-    transition: background-color 0.2s linear, -webkit-transform 0.3s ease 1.5s;
-    transition: background-color 0.2s linear, transform 0.3s ease 1.5s;
-    transition: background-color 0.2s linear, transform 0.3s ease 1.5s, -webkit-transform 0.3s ease 1.5s;
-}
-
-.header-left:hover .main-logo {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+        & .main-logo {
+            transform: scale(1.1);
+        }
+    } */
 }
 
 .main-logo-href {
@@ -1135,7 +1144,7 @@ strong {
     padding: 0.5rem;
     border-radius: 4px;
     cursor: pointer;
-    -webkit-tap-highlight-color: rgba(0,0,0,0.0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     transition: background-color 0.2s linear;
 }
 
