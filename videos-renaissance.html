@@ -143,7 +143,7 @@
             
             <header class="header" onmouseenter="changeHeaderPic();" onmouseleave="soundCancel();">
                 <div class="header-back" id="headerBack">
-                    <img class="header-back-img" id="headerBackImg" src="/assets/images/header/1.jpg" alt="">
+                    <img class="header-back-img" id="headerBackImg" src="assets/images/header/1.jpg" alt="">
                 </div>
                 <div class="header-left">
                     <a class="main-logo-href" href="index.html">
@@ -221,7 +221,7 @@
                         if (headerBack.clientHeight > 100) {
                             audio.pause();
                             audio.currentTime = 0.0;  
-                            audio.src = '/assets/resources/sounds/' + headerSounds[getNewRandomItem(headerSounds, usedSounds, 'sounds')];
+                            audio.src = 'assets/resources/sounds/' + headerSounds[getNewRandomItem(headerSounds, usedSounds, 'sounds')];
                             audio.play();
                             headerBackImg.style.transition = "transform 30s linear";
                             headerBackImg.style.transform = "scale(4)";
@@ -229,7 +229,7 @@
                     }
                     
                     function changeHeaderPic() {
-                        headerBackImg.src = `/assets/images/header/${headerPics[getNewRandomItem(headerPics, usedPics, 'pics')]}`;
+                        headerBackImg.src = `assets/images/header/${headerPics[getNewRandomItem(headerPics, usedPics, 'pics')]}`;
                         timerId = setTimeout(playSound, 1500);
                     }
             
