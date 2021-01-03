@@ -1,487 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/style.min.css">
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
-    
-    <!-- Useful meta tags -->
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="robots" content="index, follow">
-    <meta name="google" content="notranslate">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="">
-    
-    <title>Видии - эксперментальный период</title>
-</head>
-<body>
+---
+layout: default
+title: Видии - эксперментальный период
+---
 
-    <div class="main-container">
+<h2 class="page-title">Видии</h2>
 
-        <aside class="sidebar" id="sidebar">
-            <ul class="sidebar-menu">
-                <li><a class="sidebar-menu-item" id="sidebarIndex" href="index.html"><span class="sidebar-menu-item-text">На главную</span></a></li>
-                <li><a class="sidebar-menu-item" id="sidebarVideos" href="videos.html"><span class="sidebar-menu-item-text">Видии</span></a></li>
-                <li><a class="sidebar-menu-item" id="sidebarPhotos" href="photos.html"><span class="sidebar-menu-item-text">Фоты</span></a></li>
-                <li><a class="sidebar-menu-item" id="sidebarVerses" href="verses.html"><span class="sidebar-menu-item-text">Стихи</span></a></li>
-                <li><a class="sidebar-menu-item" id="sidebarScreams" href="screams.html"><span class="sidebar-menu-item-text">Крики <span class="smaller">(начало всего)</span></span></a></li>
-                <li><a class="sidebar-menu-item" id="sidebarDrawings" href="drawings.html"><span class="sidebar-menu-item-text">Рисунки</span></a></li>
-                <li><a class="sidebar-menu-item" id="sidebarHistory" href="history.html"><span class="sidebar-menu-item-text">История декадентства</span></a></li>
-                <li><a class="sidebar-menu-item" id="sidebarSymbols" href="symbols.html"><span class="sidebar-menu-item-text">Символы декадентства</span></a></li>
-                <li><a class="sidebar-menu-item" id="sidebarGuestbook" href="guestbook.html"><span class="sidebar-menu-item-text">Гостевая</span></a></li>
-            </ul>
-        
-            <ul class="sidebar-links">
-                <li class="sidebar-links-item">
-                    <a class="sidebar-links-a" href="http://shilo-mylo-man.livejournal.com/" target="_blank">
-                        <img class="sidebar-links-image" src="assets/images/sidebar/lj_logo_300.png" alt="LJ">
-                        <div class="sidebar-links-text">Электроистории от Шило-Мыло Человека</div>
-                    </a>
-                </li>
-                <li class="sidebar-links-item">
-                    <a class="sidebar-links-a" href="https://www.youtube.com/user/ebrilishe" target="_blank">
-                        <img class="sidebar-links-image" src="assets/images/sidebar/youtube_logo_300.png" alt="LJ">
-                        <div class="sidebar-links-text">Официальный канал хипаря</div>
-                    </a>
-                </li>
-            </ul>
-        
-            <div class="quote-container">
-                <blockquote class="quote" id="quote">
-                    <p class="quote-text" id="quoteText">Я чертов ЕВРЕЙ!</p>
-                    <cite class="quote-author" id="quoteAuthor">Хипарь</cite>
-                </blockquote>
+{{> videos-navi }}
+
+<div class="post post-video">
+    <div class="post-content">
+        <p>Работы периода с 2007 по середину 2011 года. Отмечен тщательностью проработки и монтажа некоторых видий и асборудностью сюжетов.</p>
+        <br>
+
+        <div class="vidia-container">
+            <div class="embed-4-3"><!-- переход -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AHJYStYFh6Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-        </aside> 
-        
-        <script> // QUOTES
-            let quoteArr = [
-                {text: "Бля вон он!!", author: "крик начала погони"},
-                {text: "Бунт! Это адский бунт! АААА!!", author: "декадентское выражение"},
-                {text: "В этом доме жил хипарь", author: "голос за кадром"},
-                {text: "Вася осторожно!!!", author: "голос за кадром"},
-                {text: "Вы все дерьмо!", author: "Хипарь"},
-                {text: "Дави, сука!", author: "враги поезда"},
-                {text: "Да на хую я вертел твое время!! Ты посмотри как на улице то пиздато!!!", author: "прохожий на улице"},
-                {text: "Ебись конём рвань!!!", author: "голос из телефона"},
-                {text: "Еврей украл мои носки!", author: "жертва еврея"},
-                {text: "Здравствуйте, ребята!", author: "ОБЖшник"},
-                {text: "Знаеш Лёня, вот меня после санатория пчёлы вообще не кусают", author: "кореш Лёни"},
-                {text: "Моя кожа рвётся на куски!!", author: "Хипарь"},
-                {text: "Не удобно, нет размаха...", author: "клоун с доской"},
-                {text: "О кабан, стели фраера", author: "корещ кабана"},
-                {text: "Отправляйтесь в ад!", author: "Хипарь"},
-                {text: "Ну это уже просто какое то хамство...", author: "тип с бородой"},
-                {text: "Пацаны вы че то не поделили??", author: "голос за кадром"},
-                {text: "Перчатку спиздели!", author: "терпила"},
-                {text: "Слыш парниш, не ушатаеш вон того типа за сотыгу?", author: "мутный тип"},
-                {text: "Слыш фраер, хавку жопиш?", author: "блатарь"},
-                {text: "Стой СУКА!!", author: "Хипарь"},
-                {text: "Стоять блять!!", author: "мент в штатском"},
-                {text: "Так, несанкционированная продажа ручек. Это статья 118", author: "мент в штатском"},
-                {text: "Твой брат чорт ****, ПИТУХ!", author: "кавказец в лесу"},
-                {text: "Ты не с тем связался, парень", author: "мстительный тип"},
-                {text: "УООООААААА!!", author: "бунтарский крик"},
-                {text: "Уёбки! Пидоры!!", author: "терпила в лесу"},
-                {text: "Шапку спиздели!!!", author: "терпила"},
-                {text: "Это 422. Срало не отпидорено. Высылайте халдея.", author: "турист"},
-                {text: "Я вас всех ВЗЪЕБУ!", author: "Хипарь"},
-                {text: "Я ЧЕРТОВ еврей!", author: "Хипарь"},
-            ];
-        
-            let usedQuotes = [];
-            let quoteText = document.getElementById('quoteText');
-            let quoteAuthor = document.getElementById('quoteAuthor');
-        
-            writeNewQuote();    
-        
-            let quote = document.getElementById("quote");
-            quote.addEventListener("click", quoteTransform);
-        
-            function getNewRandomItem(itemsArr, usedArr, type) { // source array, array to share used items, type of items for console log
-                let randomNum;
-                if (usedArr.length < itemsArr.length) {
-                    do {
-                        randomNum = Math.floor(Math.random() * itemsArr.length);
-                    } while (usedArr.includes(randomNum))
-                    usedArr.push(randomNum);
-                    console.log('used ' + type + ': ' + usedArr);
-                    return randomNum;
-                } else {
-                    usedArr.splice(0, usedArr.length);                
-                    randomNum = Math.floor(Math.random() * itemsArr.length);
-                    usedArr.push(randomNum);                
-                    console.log('used ' + type + ': ' + usedArr);
-                    return randomNum;
-                }
-            }
-        
-            function writeNewQuote() {
-                let i = getNewRandomItem(quoteArr, usedQuotes, 'quotes');                
-                quoteText.innerHTML = quoteArr[i].text;
-                quoteAuthor.innerHTML = quoteArr[i].author;
-            }
-        
-            function quoteFadeIn() {
-                quote.classList.add('fade-in');
-                quote.classList.remove('fade-out');
-                writeNewQuote();
-            }
-        
-            function quoteNoFade() {
-                quote.classList.remove('fade-in');
-            }
-        
-            function quoteTransform() {
-                quote.classList.add('fade-out');
-                setTimeout(quoteFadeIn, 100);
-                setTimeout(quoteNoFade, 120);
-            }
-        
-        </script>
-        <div class="page-container" id="pageContainer">
-
-            
-            <header class="header" onmouseenter="changeHeaderPic();" onmouseleave="soundCancel();">
-                <div class="header-back" id="headerBack">
-                    <img class="header-back-img" id="headerBackImg" src="assets/images/header/1.jpg" alt="">
-                </div>
-                <div class="header-left">
-                    <a class="main-logo-href" href="index.html">
-                        <img class="main-logo" id="mainLogo" src="assets/images/header/logo.png" alt="Hipar Intertament">
-                    </a>
-                </div>
-                <div class="header-right">
-                    <div class="burger-block" id="burgerBlock">
-                        <div class="burger-button" id="burgerButton"><span></span></div>
-                    </div>
-                </div>
-            
-                <script>
-                    let burgerButton = document.getElementById("burgerButton");
-                    let sidebar = document.getElementById("sidebar");
-                    let pageContainer = document.getElementById("pageContainer");
-                    let body = document.body;
-                    
-                    burgerButton.addEventListener("click", function() {
-                        if (burgerButton.classList.contains('active')) {
-                            burgerButton.classList.remove('active');
-                            sidebar.classList.remove('active');
-                            pageContainer.classList.remove('darken');
-                            body.classList.remove('lock');
-                        } else {
-                            burgerButton.classList.add('active');
-                            sidebar.classList.add('active');
-                            pageContainer.classList.add('darken');
-                            body.classList.add('lock');
-                        }
-                    });
-            
-                    let headerPics = [
-                        '1.jpg',
-                        '2.jpg',
-                        '3.jpg',
-                        '4.jpg',
-                        '5.jpg',
-                        '6.jpg',
-                        '7.jpg',
-                        '8.jpg',
-                        '9.jpg',
-                        '10.jpg',
-                        '11.jpg',
-                        '12.jpg',
-                        '13.jpg',
-                        '14.jpg',
-                        '15.jpg',
-                        '16.jpg',
-                        '17.jpg',
-                        '18.jpg',
-                    ];
-            
-                    let headerSounds = [
-                        'zvuk-vizga-privideniya-kotoroe-poyavilos-iz-niotkuda-22689.mp3',
-                        'kto-to-zadel-pianino-v-zabroshennomu-pustom-dome-22724.mp3',
-                        'horror-metallic-screeches_myvgesvd.mp3',
-                        '1606218088_ujas-5.mp3',
-                        'vnutri-obhvatyivaet-ujas-22012.mp3',
-                        'strashnyezvuki-55.mp3',
-                        'strashnyezvuki-36.mp3',
-                        'strashnyezvuki-38.mp3',
-                        'nastorojennyiy-zvuk-budte-bditelnyi-22607.mp3',
-                        '1605204331_jutkie-4.mp3',
-                    ];
-                    
-                    let timerId;
-                    let headerBack = document.getElementById('headerBack');
-                    let headerBackImg = document.getElementById('headerBackImg');
-                    let burgerBlock = document.getElementById('burgerBlock');
-                    let audio = new Audio();
-                    let usedPics = [];
-                    let usedSounds = [];
-            
-                    function playSound() {
-                        if (headerBack.clientHeight > 100) {
-                            audio.pause();
-                            audio.currentTime = 0.0;  
-                            audio.src = 'assets/resources/sounds/' + headerSounds[getNewRandomItem(headerSounds, usedSounds, 'sounds')];
-                            audio.play();
-                            headerBackImg.style.transition = "transform 30s linear";
-                            headerBackImg.style.transform = "scale(4)";
-                        }
-                    }
-                    
-                    function changeHeaderPic() {
-                        headerBackImg.src = `assets/images/header/${headerPics[getNewRandomItem(headerPics, usedPics, 'pics')]}`;
-                        timerId = setTimeout(playSound, 1500);
-                    }
-            
-                    function soundCancel() {
-                        clearTimeout(timerId);
-                        console.log('timer canceled');            
-                        let scaleCancelTimer = setTimeout(() => {                
-                            headerBackImg.style.transition = "transform 0.1s ease";
-                            headerBackImg.style.transform = "scale(1)";
-                        }, 1000);
-                    }
-            
-                </script>    
-            </header>
-
-            <div class="content-container">
-                
-                <h2 class="page-title">Видии</h2>
-                
-                <div class="videos-tabs-selection">
-                    <div class="videos-tabs-string">
-                        <a class="videos-tabs-item" id="videosClassic" href="videos-classic.html">Классика</a>
-                        <a class="videos-tabs-item" id="videosApogee" href="videos-apogee.html">Апогей декаденства</a>
-                        <a class="videos-tabs-item" id="videosPostdecadence" href="videos-postdecadence.html">Постдекаденские видии</a>
-                    </div>
-                    <div class="videos-tabs-string">
-                        <a class="videos-tabs-item" id="videosExperiment" href="videos-experiment.html">Экспериментальный период</a>
-                        <a class="videos-tabs-item" id="videosRenaissance" href="videos-renaissance.html">Декадентский реннесанс</a>
-                    </div>
-                </div>
-                <div class="post post-video">
-                    <div class="post-content">
-                        <p>Работы периода с 2007 по середину 2011 года. Отмечен тщательностью проработки и монтажа некоторых видий и асборудностью сюжетов.</p>
-                        <br>
-                
-                        <div class="vidia-container">
-                            <div class="embed-4-3"><!-- переход -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/AHJYStYFh6Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div> 
-                        <div class="vidia-container">
-                            <div class="embed-4-3">
-                                <video class="vidia" src="assets/resources/videos/experiment/29112008155-001.mp4" controls="controls"></video>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div>
-                        <div class="vidia-container">
-                            <div class="embed-4-3"><!-- вася осторожно -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/FUGdpCETZ94" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div>         
-                        <div class="vidia-container">
-                            <div class="embed-4-3"><!-- хулиганы -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Te5qzQ2gmxM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div>          
-                        <div class="vidia-container">
-                            <div class="embed-4-3"><!-- гоп-стоп -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/qk4lCMwgEgs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div> 
-                        <div class="vidia-container">
-                            <div class="embed-4-3">
-                                <video class="vidia" src="assets/resources/videos/experiment/29042009016-008.mp4" controls="controls"></video>
-                            </div>
-                            <p class="vidia-name">Мяч</p>
-                        </div>        
-                        <div class="vidia-container"> <!-- оскорбление -->
-                            <div class="embed-4-3">
-                                <video class="vidia" src="https://hipar.000webhostapp.com/assets/resources/videos/experiment/oskorblenie.mp4" controls="controls"></video>
-                            </div>
-                            <p class="vidia-name">Оскорбление</p>
-                        </div>
-                        <div class="vidia-container">
-                            <div class="embed-4-3">
-                                <video class="vidia" src="assets/resources/videos/experiment/30102010006.mp4" controls="controls"></video>
-                            </div>
-                            <p class="vidia-name">ТОЛЯН</p>
-                        </div>          
-                        <div class="vidia-container">
-                            <div class="embed-4-3"><!-- пчела -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/HaG9uA74hm4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div>          
-                        <div class="vidia-container">
-                            <div class="embed-4-3"><!-- видео с новой мобилы -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/AakVtx1xbS8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div>          
-                        <div class="vidia-container">
-                            <div class="embed-4-3"><!-- джеймс бонд -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/t1OefTSW8rM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div>          
-                        <div class="vidia-container">
-                            <div class="embed-4-3"><!-- драка на озере -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/vdGudSxXjas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div>          
-                        <div class="vidia-container">
-                            <div class="embed-4-3"><!-- жид -->
-                                <video class="vidia" src="assets/resources/videos/experiment/zhid.mp4" controls="controls"></video>
-                            </div>
-                            <p class="vidia-name">Жид</p>
-                        </div>          
-                        <div class="vidia-container">
-                            <div class="embed-16-9"><!-- спортсмен -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/ojOD2dDmXcE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div>          
-                        <div class="vidia-container">
-                            <div class="embed-16-9"><!-- спортсмен 2 -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/7pf76CCShcY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div>          
-                        <div class="vidia-container">
-                            <div class="embed-16-9"><!-- ростикс -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/rVlDPWtdBgs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
-                        </div>        
-                
-                    </div> <!-- /POST CONTENT -->
-                </div> <!-- /POST -->
-                
-                <script> //Selecting of active item in sidebar
-                    let element = document.getElementById("sidebarVideos");
-                    element.classList.add("active");
-                    let section = document.getElementById("videosExperiment");
-                    section.classList.add("active");
-                </script>
-            </div>
-
-            <footer class="footer">
-                    <div class="footer-content">
-                        <span class="copyright-1">© Hipar Intertament, 2004-<span id="copyrightYear">2021</span></span><span class="copyright-2">Тебе пиздец!</span>
-                    </div>
-            </footer>
-            
-            <script> //change year to current
-                let today = new Date();
-                let year = today.getFullYear();
-                let copyrightYear = document.getElementById('copyrightYear');
-                copyrightYear.innerHTML = year;
-            </script>
-
+            <p class="vidia-name"></p>
         </div> 
-    </div>
-    
-    <div class="lightbox">
-        <div class="overlay"></div>
-        
-        <div class="flex-container">
-            <figure class="gallery-container">
-                <div class="img-container" id="imgContainer">
-                    <img src="" alt="Фото">
-                    <div class="prev"><span><</span></div>
-                    <div class="next"><span>></span></div>
-                </div>
-                <div class="img-description-container"></div>
-            </figure>
+        <div class="vidia-container">
+            <div class="embed-4-3">
+                <video class="vidia" src="assets/resources/videos/experiment/29112008155-001.mp4" controls="controls"></video>
+            </div>
+            <p class="vidia-name"></p>
         </div>
-    </div>
-    
-    <script>
-        let $li = $('.photos-list').find('> li'),
-            $links = $li.find('> a'),
-            $lightbox = $('.lightbox'),
-            $overlay = $('.overlay'),
-            $imgContainer = $('.img-container'),
-            $prev = $('.prev'),
-            $next = $('.next'),
-            imgContainer = document.getElementById('imgContainer'),
-            liIndex,
-            targetImg,
-            timerIdGallery;
-    
-        $links.click(function(event) {
-            if (headerBack.clientHeight > 100) {
-                event.preventDefault();
-                liIndex = $(this).parent().index();
-                targetImg = $(this).attr('href');
-                $lightbox.find('img').attr('src', targetImg);
-                $lightbox.fadeIn();
-            }
-        });
-    
-        $overlay.click(function() {
-            $lightbox.fadeOut();
-        });
-    
-        $imgContainer.find('> img').click(function() {
-            $lightbox.fadeOut();
-        });
-    
-        $next.click(function(){
-            imgContainer.style.transform = 'translateX(-150vh)';
-    
-            timerIdGallery = setTimeout(() => {
-                if (liIndex < $li.length - 1) {
-                    targetImg = $li.eq(liIndex + 1).find('> a').attr('href');
-                    liIndex++;
-                } else {
-                    targetImg = $li.eq(0).find('> a').attr('href');
-                    liIndex = 0;
-                }
-                $lightbox.find('img').attr('src', targetImg);
-    
-                imgContainer.style.transition = 'transform 0s';
-                imgContainer.style.transform = 'translateX(150vh)';
-                let timerIdGallery = setTimeout(() => {
-                    imgContainer.style.transition = 'transform 0.1s linear';
-                    imgContainer.style.transform = 'translateX(0vh)';
-                }, 30);            
-            }, 110);
-        });
-    
-        $prev.click(function(){
-            imgContainer.style.transform = 'translateX(150vh)';        
-    
-            timerIdGallery = setTimeout(() => {
-                if (liIndex > 0) {
-                    targetImg = $li.eq(liIndex - 1).find('> a').attr('href');
-                    liIndex--;
-                } else {
-                    targetImg = $li.eq($li.length - 1).find('> a').attr('href');
-                    liIndex = $li.length - 1;
-                }
-                $lightbox.find('img').attr('src', targetImg);
-    
-                imgContainer.style.transition = 'transform 0s';
-                imgContainer.style.transform = 'translateX(-150vh)';
-                let timerIdGallery = setTimeout(() => {
-                    imgContainer.style.transition = 'transform 0.1s linear';
-                    imgContainer.style.transform = 'translateX(0vh)';
-                }, 30);            
-            }, 110);
-        });
-    </script>
-    <script src="assets/js/app.js"></script>
-</body>
-</html>
+        <div class="vidia-container">
+            <div class="embed-4-3"><!-- вася осторожно -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FUGdpCETZ94" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="vidia-name"></p>
+        </div>         
+        <div class="vidia-container">
+            <div class="embed-4-3"><!-- хулиганы -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Te5qzQ2gmxM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="vidia-name"></p>
+        </div>          
+        <div class="vidia-container">
+            <div class="embed-4-3"><!-- гоп-стоп -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qk4lCMwgEgs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="vidia-name"></p>
+        </div> 
+        <div class="vidia-container">
+            <div class="embed-4-3">
+                <video class="vidia" src="assets/resources/videos/experiment/29042009016-008.mp4" controls="controls"></video>
+            </div>
+            <p class="vidia-name">Мяч</p>
+        </div>        
+        <div class="vidia-container"> <!-- оскорбление -->
+            <div class="embed-4-3">
+                <video class="vidia" src="{{> videohost }}assets/resources/videos/experiment/oskorblenie.mp4" controls="controls"></video>
+            </div>
+            <p class="vidia-name">Оскорбление</p>
+        </div>
+        <div class="vidia-container">
+            <div class="embed-4-3">
+                <video class="vidia" src="assets/resources/videos/experiment/30102010006.mp4" controls="controls"></video>
+            </div>
+            <p class="vidia-name">ТОЛЯН</p>
+        </div>          
+        <div class="vidia-container">
+            <div class="embed-4-3"><!-- пчела -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/HaG9uA74hm4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="vidia-name"></p>
+        </div>          
+        <div class="vidia-container">
+            <div class="embed-4-3"><!-- видео с новой мобилы -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AakVtx1xbS8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="vidia-name"></p>
+        </div>          
+        <div class="vidia-container">
+            <div class="embed-4-3"><!-- джеймс бонд -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/t1OefTSW8rM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="vidia-name"></p>
+        </div>          
+        <div class="vidia-container">
+            <div class="embed-4-3"><!-- драка на озере -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/vdGudSxXjas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="vidia-name"></p>
+        </div>          
+        <div class="vidia-container">
+            <div class="embed-4-3"><!-- жид -->
+                <video class="vidia" src="assets/resources/videos/experiment/zhid.mp4" controls="controls"></video>
+            </div>
+            <p class="vidia-name">Жид</p>
+        </div>          
+        <div class="vidia-container">
+            <div class="embed-16-9"><!-- спортсмен -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ojOD2dDmXcE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="vidia-name"></p>
+        </div>          
+        <div class="vidia-container">
+            <div class="embed-16-9"><!-- спортсмен 2 -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/7pf76CCShcY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="vidia-name"></p>
+        </div>          
+        <div class="vidia-container">
+            <div class="embed-16-9"><!-- ростикс -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/rVlDPWtdBgs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="vidia-name"></p>
+        </div>        
+
+    </div> <!-- /POST CONTENT -->
+</div> <!-- /POST -->
+
+<script> //Selecting of active item in sidebar
+    let element = document.getElementById("sidebarVideos");
+    element.classList.add("active");
+    let section = document.getElementById("videosExperiment");
+    section.classList.add("active");
+</script>
