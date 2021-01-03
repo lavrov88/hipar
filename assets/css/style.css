@@ -1008,6 +1008,7 @@ strong {
 
 .videos-tabs-selection {
     margin-bottom: 2rem;
+    max-width: 100%;
 }
 
 .videos-tabs-string {
@@ -1024,10 +1025,11 @@ strong {
     align-items: center;
     text-align: center;
     padding: 0.6rem 1.2rem;
-    margin: 0.3rem;
+    margin: 0.2rem;
     border-radius: 4px;
     background-color: #ffff00;
     color: #b90000;
+    font-size: 1.3rem;
     font-weight: 500;
     text-decoration: none;
     vertical-align: middle;
@@ -1439,11 +1441,19 @@ strong {
     }
 
     .post {
-        padding: 1.5rem;
+        padding: 1rem;
+    }
+
+    .post-photos {
+        padding: 2rem 0;
+        margin-left: -1rem;
+        margin-right: -1rem;
     }
 
     .post-video {
         padding: 2rem 0;
+        margin-left: -1rem;
+        margin-right: -1rem;
     }
 
     .post-video p {
