@@ -723,6 +723,7 @@ strong {
 
 .page-title {
     margin-bottom: 2rem;
+    margin-left: 2rem;
     font-size: 2.4rem;
     font-weight: 700;
     color: #ffff00;
@@ -813,9 +814,14 @@ strong {
 }
 
 .post-photos {
-    padding: 2rem 0;
+    padding: 0;
     background: none;
     box-shadow: none;
+}
+
+.post-photos .post-title {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
 }
 
 .drawing {
@@ -1371,6 +1377,7 @@ strong {
     .header:hover .header-left {
         -webkit-transform: none;
         transform: none;
+        background-color: #000;
     }
 
     .header:hover .main-logo {
@@ -1425,7 +1432,6 @@ strong {
     .quote-container {
         -ms-flex-align: start;
         align-items: flex-start;
-        overflow-y: visible;
     }
 
     .page-container {
@@ -1437,7 +1443,7 @@ strong {
     }
 
     .page-title {
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
 
     .post {
@@ -1445,9 +1451,14 @@ strong {
     }
 
     .post-photos {
-        padding: 2rem 0;
+        padding: 0 0;
         margin-left: -1rem;
         margin-right: -1rem;
+    }
+
+    .post-photos .post-title {
+        margin-left: 2rem;
+        margin-bottom: 2rem;
     }
 
     .post-video {
@@ -1517,6 +1528,10 @@ strong {
 
     .quote cite {
         font-size: 1rem;
+    }
+
+    .quote p {
+        font-size: 1.2rem;
     }
 
     .videos-tabs-item {
