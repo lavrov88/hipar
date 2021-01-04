@@ -299,6 +299,34 @@
                 <script> //Selecting of active item in sidebar
                     let element = document.getElementById("sidebarPhotos");
                     element.classList.add("active")
+                
+                    /* CACHING ORIGINAL PHOTOS TO OPEN IN LIGTHBOX */
+                    let imgs = [];
+                    let imgSources = [
+                        'assets/resources/photos/2/DSC000148.JPG',
+                        'assets/resources/photos/2/DSC0001418.JPG',
+                        'assets/resources/photos/2/DSC00066.JPG',
+                        'assets/resources/photos/2/DSC00068.JPG',
+                        'assets/resources/photos/2/DSC00070.JPG',
+                        'assets/resources/photos/2/DSC000013.JPG',
+                        'assets/resources/photos/2/DSC00467.JPG',
+                        'assets/resources/photos/2/DSC00488.JPG',
+                        'assets/resources/photos/2/02012008003.jpg',
+                        'assets/resources/photos/2/09052008507.jpg',
+                        'assets/resources/photos/2/310720081097.jpg',
+                        'assets/resources/photos/2/06122009013.jpg',
+                        'assets/resources/photos/2/18042009220.jpg',
+                        'assets/resources/photos/2/18042009219.jpg',
+                    ];
+                
+                    if (headerBack.clientHeight > 100) { // checking non-mobile device
+                        for (let i = 0; i < imgSources.length; i++) {
+                            imgs[i] = new Image();
+                            imgs[i].src = imgSources[i];
+                        }
+                    }    
+                    console.log('cached images:');
+                    console.log(imgs);
                 </script>
                 <script src="assets/resources/photos/jquery.js"></script>
             </div>
