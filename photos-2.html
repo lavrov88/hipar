@@ -19,7 +19,7 @@
 
     <div class="main-container">
 
-        <aside class="sidebar" id="sidebar">
+        <aside class="sidebar" id="sidebar" swiped-right="toggleSidebar()">
             <ul class="sidebar-menu">
                 <li><a class="sidebar-menu-item" id="sidebarIndex" href="index.html"><span class="sidebar-menu-item-text">На главную</span></a></li>
                 <li><a class="sidebar-menu-item" id="sidebarVideos" href="videos.html"><span class="sidebar-menu-item-text">Видии</span></a></li>
@@ -139,6 +139,20 @@
                 setTimeout(quoteNoFade, 120);
             }
         
+            function toggleSidebar() {
+                if (burgerButton.classList.contains('active')) {
+                    burgerButton.classList.remove('active');
+                    sidebar.classList.remove('active');
+                    pageContainer.classList.remove('darken');
+                    body.classList.remove('lock');
+                } else {
+                    burgerButton.classList.add('active');
+                    sidebar.classList.add('active');
+                    pageContainer.classList.add('darken');
+                    body.classList.add('lock');
+                }
+            }
+        
         </script>
         <div class="page-container" id="pageContainer">
 
@@ -164,19 +178,12 @@
                     let pageContainer = document.getElementById("pageContainer");
                     let body = document.body;
                     
-                    burgerButton.addEventListener("click", function() {
-                        if (burgerButton.classList.contains('active')) {
-                            burgerButton.classList.remove('active');
-                            sidebar.classList.remove('active');
-                            pageContainer.classList.remove('darken');
-                            body.classList.remove('lock');
-                        } else {
-                            burgerButton.classList.add('active');
-                            sidebar.classList.add('active');
-                            pageContainer.classList.add('darken');
-                            body.classList.add('lock');
+                    burgerButton.addEventListener("click", toggleSidebar);
+                    sidebar.addEventListener('swiped-right', function(e) {
+                        if (e.target) {
+                            toggleSidebar();
                         }
-                    });
+                    });        
             
                     let headerPics = [
                         '1.jpg',
