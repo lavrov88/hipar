@@ -22,7 +22,20 @@
         <aside class="sidebar" id="sidebar" swiped-right="toggleSidebar()">
             <ul class="sidebar-menu">
                 <li><a class="sidebar-menu-item" id="sidebarIndex" href="index.html"><span class="sidebar-menu-item-text">На главную</span></a></li>
-                <li><a class="sidebar-menu-item" id="sidebarVideos" href="videos.html"><span class="sidebar-menu-item-text">Видии</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarVideos" href="videos.html">
+                        <div class="sidebar-menu-item-text has-submenu">
+                            <div>Видии</div>
+                            <div class="sidebar-arrow-block" id="sidebarArrowBlock"><span class="sidebar-arrow"></span></div>                     
+                        </div>
+                    </a>
+                    <ul class="sidebar-submenu" id="videosSubmenu">
+                        <li><a class="sidebar-submenu-item" href="videos-classic.html">Классика</a></li>
+                        <li><a class="sidebar-submenu-item" href="videos-apogee.html">Апогей декаденства</a></li>
+                        <li><a class="sidebar-submenu-item" href="videos-postdecadence.html">Постдекаденские видии</a></li>
+                        <li><a class="sidebar-submenu-item" href="videos-experiment.html">Экспериментальный период</a></li>
+                        <li><a class="sidebar-submenu-item" href="videos-renaissance.html">Декадентский реннесанс</a></li>
+                    </ul>
+                </li>
                 <li><a class="sidebar-menu-item" id="sidebarPhotos" href="photos.html"><span class="sidebar-menu-item-text">Фоты</span></a></li>
                 <li><a class="sidebar-menu-item" id="sidebarVerses" href="verses.html"><span class="sidebar-menu-item-text">Стихи</span></a></li>
                 <li><a class="sidebar-menu-item" id="sidebarScreams" href="screams.html"><span class="sidebar-menu-item-text">Крики <span class="smaller">(начало всего)</span></span></a></li>
@@ -153,6 +166,17 @@
                 }
             }
         
+            /* SUBMENU */
+        
+            let sidebarArrowBlock = document.querySelector('#sidebarArrowBlock');
+            let videosSubmenu = document.querySelector('#videosSubmenu');
+            sidebarArrowBlock.onclick = function(event) {
+                event.preventDefault();
+                videosSubmenu.classList.toggle('active');
+                sidebarArrowBlock.classList.toggle('active');
+                sidebar.classList.toggle('opened-submenu');
+            }
+        
         </script>
         <div class="page-container" id="pageContainer">
 
@@ -239,8 +263,10 @@
                     }
                     
                     function changeHeaderPic() {
-                        headerBackImg.src = `assets/images/header/${headerPics[getNewRandomItem(headerPics, usedPics, 'pics')]}`;
-                        timerId = setTimeout(playSound, 1500);
+                        if (headerBack.clientHeight > 100) {
+                            headerBackImg.src = `assets/images/header/${headerPics[getNewRandomItem(headerPics, usedPics, 'pics')]}`;
+                            timerId = setTimeout(playSound, 1500);
+                        }
                     }
             
                     function soundCancel() {
@@ -270,107 +296,113 @@
                         <a class="videos-tabs-item" id="videosRenaissance" href="videos-renaissance.html">Декадентский реннесанс</a>
                     </div>
                 </div>
+                
+                <!-- <script src="assets/resources/photos/jquery.js"></script> -->
                 <div class="post post-video">
                     <div class="post-content">
                         <p>Работы периода с 2007 по середину 2011 года. Отмечен тщательностью проработки и монтажа некоторых видий и асборудностью сюжетов.</p>
                         <br>
                 
                         <div class="vidia-container">
-                            <div class="embed-4-3"><!-- переход -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/AHJYStYFh6Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="embed-4-3 youtube" id="AHJYStYFh6Q">
                             </div>
-                            <p class="vidia-name"></p>
-                        </div> 
+                            <p class="vidia-name">Переход</p>
+                        </div>
+                
                         <div class="vidia-container">
                             <div class="embed-4-3">
-                                <video class="vidia" src="assets/resources/videos/experiment/29112008155-001.mp4" controls="controls"></video>
+                                <video class="vidia" src="assets/resources/videos/experiment/29112008155-001.mp4" poster="assets/resources/videos/experiment/29112008155-001.jpg" preload="none" controls="controls"></video>
                             </div>
                             <p class="vidia-name"></p>
                         </div>
+                
                         <div class="vidia-container">
-                            <div class="embed-4-3"><!-- вася осторожно -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/FUGdpCETZ94" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="embed-4-3 youtube" id="FUGdpCETZ94">
                             </div>
-                            <p class="vidia-name"></p>
-                        </div>         
+                            <p class="vidia-name">Вася, осторожно!</p>
+                        </div>
+                
                         <div class="vidia-container">
-                            <div class="embed-4-3"><!-- хулиганы -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Te5qzQ2gmxM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="embed-4-3 youtube" id="Te5qzQ2gmxM">
                             </div>
-                            <p class="vidia-name"></p>
-                        </div>          
-                        <div class="vidia-container">
-                            <div class="embed-4-3"><!-- гоп-стоп -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/qk4lCMwgEgs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p class="vidia-name"></p>
+                            <p class="vidia-name">Хулиганы</p>
                         </div> 
+                
+                        <div class="vidia-container">
+                            <div class="embed-4-3 youtube" id="qk4lCMwgEgs">
+                            </div>
+                            <p class="vidia-name">Гоп-стоп</p>
+                        </div> 
+                
                         <div class="vidia-container">
                             <div class="embed-4-3">
-                                <video class="vidia" src="assets/resources/videos/experiment/29042009016-008.mp4" controls="controls"></video>
+                                <video class="vidia" src="assets/resources/videos/experiment/29042009016-008.mp4" poster="assets/resources/videos/experiment/29042009016-008.jpg" preload="none" controls="controls"></video>
                             </div>
                             <p class="vidia-name">Мяч</p>
-                        </div>        
-                        <div class="vidia-container"> <!-- оскорбление -->
+                        </div> 
+                
+                        <div class="vidia-container">
                             <div class="embed-4-3">
-                                <video class="vidia" src="https://hipar.000webhostapp.com/assets/resources/videos/experiment/oskorblenie.mp4" controls="controls"></video>
+                                <video class="vidia" src="https://hipar.000webhostapp.com/assets/resources/videos/experiment/oskorblenie.mp4" poster="assets/resources/videos/experiment/oskorblenie.jpg" preload="none" controls="controls"></video>
                             </div>
                             <p class="vidia-name">Оскорбление</p>
                         </div>
+                
                         <div class="vidia-container">
                             <div class="embed-4-3">
-                                <video class="vidia" src="assets/resources/videos/experiment/30102010006.mp4" controls="controls"></video>
+                                <video class="vidia" src="assets/resources/videos/experiment/30102010006.mp4" poster="assets/resources/videos/experiment/30102010006.jpg" preload="none" controls="controls"></video>
                             </div>
                             <p class="vidia-name">ТОЛЯН</p>
-                        </div>          
+                        </div>
+                        
                         <div class="vidia-container">
-                            <div class="embed-4-3"><!-- пчела -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/HaG9uA74hm4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="embed-4-3 youtube" id="HaG9uA74hm4">
                             </div>
-                            <p class="vidia-name"></p>
-                        </div>          
+                            <p class="vidia-name">Пчела</p>
+                        </div> 
+                
                         <div class="vidia-container">
-                            <div class="embed-4-3"><!-- видео с новой мобилы -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/AakVtx1xbS8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="embed-4-3 youtube" id="AakVtx1xbS8">
                             </div>
-                            <p class="vidia-name"></p>
-                        </div>          
+                            <p class="vidia-name">Видео с "новой" мобилы</p>
+                        </div>
+                
                         <div class="vidia-container">
-                            <div class="embed-4-3"><!-- джеймс бонд -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/t1OefTSW8rM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="embed-4-3 youtube" id="t1OefTSW8rM">
                             </div>
-                            <p class="vidia-name"></p>
-                        </div>          
+                            <p class="vidia-name">Джеймс Бонд</p>
+                        </div>
+                
                         <div class="vidia-container">
-                            <div class="embed-4-3"><!-- драка на озере -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/vdGudSxXjas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="embed-4-3 youtube" id="vdGudSxXjas">
                             </div>
-                            <p class="vidia-name"></p>
-                        </div>          
+                            <p class="vidia-name">Страшная драка на озере</p>
+                        </div>
+                
                         <div class="vidia-container">
                             <div class="embed-4-3"><!-- жид -->
-                                <video class="vidia" src="assets/resources/videos/experiment/zhid.mp4" controls="controls"></video>
+                                <video class="vidia" src="assets/resources/videos/experiment/zhid.mp4" poster="assets/resources/videos/experiment/zhid.jpg" preload="none" controls="controls"></video>
                             </div>
                             <p class="vidia-name">Жид</p>
-                        </div>          
+                        </div>
+                        
                         <div class="vidia-container">
-                            <div class="embed-16-9"><!-- спортсмен -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/ojOD2dDmXcE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="embed-16-9 youtube" id="ojOD2dDmXcE">
                             </div>
-                            <p class="vidia-name"></p>
-                        </div>          
+                            <p class="vidia-name">Скандал с российским спортсменом</p>
+                        </div>
+                
                         <div class="vidia-container">
-                            <div class="embed-16-9"><!-- спортсмен 2 -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/7pf76CCShcY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="embed-16-9 youtube" id="7pf76CCShcY">
                             </div>
-                            <p class="vidia-name"></p>
-                        </div>          
+                            <p class="vidia-name">Месть российского спортсмена</p>
+                        </div>
+                
                         <div class="vidia-container">
-                            <div class="embed-16-9"><!-- ростикс -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/rVlDPWtdBgs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="embed-16-9 youtube" id="rVlDPWtdBgs">
                             </div>
-                            <p class="vidia-name"></p>
-                        </div>        
+                            <p class="vidia-name">Разборка в Ростиксе (ответил по понятиям)</p>
+                        </div>     
                 
                     </div> <!-- /POST CONTENT -->
                 </div> <!-- /POST -->
@@ -395,6 +427,46 @@
                 let copyrightYear = document.getElementById('copyrightYear');
                 copyrightYear.innerHTML = year;
             </script>
+            
+            <script> //vidia preview generation
+                let ytVideos = document.getElementsByClassName('youtube');
+                let activeSection;
+                if (document.querySelector('#sidebarVideos').classList.contains('active')) {
+                    console.log('inVideos = true');
+                    activeSection = document.querySelector('.videos-tabs-item.active').id;
+                }
+                console.log('active section: ' + activeSection);
+            
+                for (let i = 0; i < ytVideos.length; i++) {
+                    let ytId = ytVideos[i].getAttribute('id');
+                    let ytPreview = document.createElement('img');
+                    let ytPlayButton = document.createElement('img');
+                    ytPreview.setAttribute('class', 'vidia-preview');
+            
+                    if (activeSection === 'videosClassic') {
+                        ytPreview.setAttribute('src', 'assets/resources/videos/classic/' + ytId + '.jpg')
+                    } else if (activeSection === 'videosApogee') {
+                        ytPreview.setAttribute('src', 'assets/resources/videos/apogee/' + ytId + '.jpg')
+                    } else if (activeSection === 'videosPostdecadence') {
+                        ytPreview.setAttribute('src', 'assets/resources/videos/postdecadence/' + ytId + '.jpg')
+                    } else if (activeSection === 'videosExperiment') {
+                        ytPreview.setAttribute('src', 'assets/resources/videos/experiment/' + ytId + '.jpg')
+                    } else if (activeSection === 'videosRenaissance') {
+                        ytPreview.setAttribute('src', 'assets/resources/videos/renaissance/' + ytId + '.jpg')
+                    }
+            
+                    ytPreview.setAttribute('alt', '');
+                    ytVideos[i].appendChild(ytPreview);
+                    ytPlayButton.setAttribute('class', 'vidia-preview-btn');
+                    ytPlayButton.setAttribute('src', 'assets/images/yt-btn.png');
+                    ytPlayButton.setAttribute('alt', '');
+                    ytVideos[i].appendChild(ytPlayButton);
+            
+                    ytVideos[i].onclick = function () {
+                        this.innerHTML = '<iframe src="https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0" allowfullscreen allow="autoplay"></iframe>';
+                    }
+                }
+            </script>
 
         </div> 
     </div>
@@ -414,80 +486,116 @@
         </div>
     </div>
     
-    <script>
-        let $li = $('.photos-list').find('> li'),
-            $links = $li.find('> a'),
-            $lightbox = $('.lightbox'),
-            $overlay = $('.overlay'),
-            $imgContainer = $('.img-container'),
-            $prev = $('.prev'),
-            $next = $('.next'),
-            imgContainer = document.getElementById('imgContainer'),
+    <script> //lightbox without jquery
+        let li = document.querySelectorAll('.photos-list > li'),
+            links = document.querySelectorAll('.photos-list > li > a'),
+            lightbox = document.querySelector('.lightbox'),
+            overlay = document.querySelector('.overlay'),
+            imgContainer = document.querySelector('#imgContainer'),
+            prev = document.querySelector('.prev'),
+            next = document.querySelector('.next'),
             liIndex,
             targetImg,
             timerIdGallery;
-    
-        $links.click(function(event) {
-            if (headerBack.clientHeight > 100) {
-                event.preventDefault();
-                liIndex = $(this).parent().index();
-                targetImg = $(this).attr('href');
-                $lightbox.find('img').attr('src', targetImg);
-                $lightbox.fadeIn();
+        
+        for (let i = 0; i < links.length; i++) {
+            links[i].onclick = function(event) {
+                if (headerBack.clientHeight > 100) { //check desktop client
+                    event.preventDefault();
+                    liIndex = i;
+                    targetImg = this.getAttribute('href');
+                    lightbox.querySelector('img').setAttribute('src', targetImg);
+                    fadeIn();             
+                }
             }
-        });
+        }
     
-        $overlay.click(function() {
-            $lightbox.fadeOut();
-        });
+        function fadeIn() {
+            lightbox.style.display = 'block';
+            imgContainer.style.transform = 'scale(0.7)';
+            imgContainer.style.opacity = '0%';
+            imgContainer.style.transition = 'all 0.3s ease';
+            
+            let fadeInTimerId = setTimeout(() => {
+                overlay.style.opacity = '100%';
+                imgContainer.style.transform = 'scale(1)';
+                imgContainer.style.opacity = '100%';
+                
+                let fadeInTimerId = setTimeout(() => {
+                    imgContainer.style.transition = 'all 0.1s linear'; //transform for fast changing left-right
+                }, 320);
     
-        $imgContainer.find('> img').click(function() {
-            $lightbox.fadeOut();
-        });
+            }, 20);
+        }
     
-        $next.click(function(){
-            imgContainer.style.transform = 'translateX(-150vh)';
+        function fadeOut() {
+            imgContainer.style.transition = 'all 0.2s ease';
     
-            timerIdGallery = setTimeout(() => {
-                if (liIndex < $li.length - 1) {
-                    targetImg = $li.eq(liIndex + 1).find('> a').attr('href');
+            let fadeOutTimerId = setTimeout(() => {
+                imgContainer.style.transform = 'scale(0.3)';
+                imgContainer.style.opacity = '0%';
+                overlay.style.opacity = '0%';
+    
+                let fadeOutTimerId = setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 320);
+    
+            }, 20);
+        }
+    
+        overlay.onclick = function() {
+            fadeOut();
+        }
+    
+        document.querySelector('#imgContainer > img').onclick = function() {
+            fadeOut();
+        }
+    
+        next.onclick = function() {
+            imgContainer.style.transform = 'translateX(-150vh)'; //fade to left
+    
+            let newImgTimerId = setTimeout(() => {
+                if (liIndex < li.length - 1) {
+                    targetImg = links[liIndex + 1].getAttribute('href');
+                    lightbox.querySelector('img').setAttribute('src', targetImg);
                     liIndex++;
                 } else {
-                    targetImg = $li.eq(0).find('> a').attr('href');
+                    targetImg = links[0].getAttribute('href');
+                    lightbox.querySelector('img').setAttribute('src', targetImg);
                     liIndex = 0;
                 }
-                $lightbox.find('img').attr('src', targetImg);
     
-                imgContainer.style.transition = 'transform 0s';
-                imgContainer.style.transform = 'translateX(150vh)';
-                let timerIdGallery = setTimeout(() => {
+                imgContainer.style.transition = 'transform 0s'; //after changing img
+                imgContainer.style.transform = 'translateX(150vh)'; //go to right
+                let newImgTimerId = setTimeout(() => {
                     imgContainer.style.transition = 'transform 0.1s linear';
-                    imgContainer.style.transform = 'translateX(0vh)';
-                }, 30);            
-            }, 110);
-        });
+                    imgContainer.style.transform = 'translateX(0vh)'; //and come from right
+                }, 20);
+            }, 120);        
+        }
     
-        $prev.click(function(){
-            imgContainer.style.transform = 'translateX(150vh)';        
+        prev.onclick = function() {
+            imgContainer.style.transform = 'translateX(150vh)'; //fade to right
     
-            timerIdGallery = setTimeout(() => {
+            let newImgTimerId = setTimeout(() => {
                 if (liIndex > 0) {
-                    targetImg = $li.eq(liIndex - 1).find('> a').attr('href');
+                    targetImg = links[liIndex - 1].getAttribute('href');
+                    lightbox.querySelector('img').setAttribute('src', targetImg);
                     liIndex--;
                 } else {
-                    targetImg = $li.eq($li.length - 1).find('> a').attr('href');
-                    liIndex = $li.length - 1;
-                }
-                $lightbox.find('img').attr('src', targetImg);
+                    targetImg = links[li.length - 1].getAttribute('href');
+                    lightbox.querySelector('img').setAttribute('src', targetImg);
+                    liIndex = li.length - 1;
+                } 
     
-                imgContainer.style.transition = 'transform 0s';
-                imgContainer.style.transform = 'translateX(-150vh)';
-                let timerIdGallery = setTimeout(() => {
+                imgContainer.style.transition = 'transform 0s'; //after changing img
+                imgContainer.style.transform = 'translateX(-150vh)'; //go to left
+                let newImgTimerId = setTimeout(() => {
                     imgContainer.style.transition = 'transform 0.1s linear';
-                    imgContainer.style.transform = 'translateX(0vh)';
-                }, 30);            
-            }, 110);
-        });
+                    imgContainer.style.transform = 'translateX(0vh)'; //and come from left
+                }, 20);
+            }, 120);        
+        }
     </script>
     <script src="assets/js/app.js"></script>
 </body>
