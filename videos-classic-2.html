@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/style.min.css">
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png"> -->
+    <link type="image/x-icon" rel="shortcut icon" href="assets/images/favicon/favicon-16.ico">
+    <link type="image/png" sizes="16x16" rel="icon" href="assets/images/favicon/favicon-16.png">
+    <link type="image/png" sizes="32x32" rel="icon" href="assets/images/favicon/favicon-32.png">
+    <link type="image/png" sizes="96x96" rel="icon" href="assets/images/favicon/favicon-96.png">
+    <link type="image/png" sizes="120x120" rel="icon" href="assets/images/favicon/favicon-120.png">
+    <link type="image/png" sizes="192x192" rel="icon" href="assets/images/favicon/favicon-192.png">
     
     <!-- Useful meta tags -->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -25,7 +31,7 @@
                 <li><a class="sidebar-menu-item" id="sidebarVideos" href="videos.html">
                         <div class="sidebar-menu-item-text has-submenu">
                             <div>Видии</div>
-                            <div class="sidebar-arrow-block" id="sidebarArrowBlock"><span class="sidebar-arrow"></span></div>                     
+                            <div class="sidebar-arrow-block" id="sidebarArrowBlockVideos"><span class="sidebar-arrow"></span></div>                     
                         </div>
                     </a>
                     <ul class="sidebar-submenu" id="videosSubmenu">
@@ -37,7 +43,16 @@
                     </ul>
                 </li>
                 <li><a class="sidebar-menu-item" id="sidebarPhotos" href="photos.html"><span class="sidebar-menu-item-text">Фоты</span></a></li>
-                <li><a class="sidebar-menu-item" id="sidebarVerses" href="verses.html"><span class="sidebar-menu-item-text">Стихи</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarVerses" href="verses.html">
+                    <div class="sidebar-menu-item-text has-submenu">
+                        <div>Стихи</div>
+                        <div class="sidebar-arrow-block" id="sidebarArrowBlockVerses"><span class="sidebar-arrow"></span></div>                     
+                    </div></a>        
+                    <ul class="sidebar-submenu" id="versesSubmenu">
+                        <li><a class="sidebar-submenu-item" href="verses-classic.html">Классическая эра</a></li>
+                        <li><a class="sidebar-submenu-item" href="verses-late.html">Поздняя эра</a></li>
+                    </ul>
+                </li>
                 <li><a class="sidebar-menu-item" id="sidebarScreams" href="screams.html"><span class="sidebar-menu-item-text">Крики <span class="smaller">(начало всего)</span></span></a></li>
                 <li><a class="sidebar-menu-item" id="sidebarDrawings" href="drawings.html"><span class="sidebar-menu-item-text">Рисунки</span></a></li>
                 <li><a class="sidebar-menu-item" id="sidebarHistory" href="history.html"><span class="sidebar-menu-item-text">История декадентства</span></a></li>
@@ -168,14 +183,36 @@
         
             /* SUBMENU */
         
-            let sidebarArrowBlock = document.querySelector('#sidebarArrowBlock');
+            let sidebarArrowBlockVideos = document.querySelector('#sidebarArrowBlockVideos');
             let videosSubmenu = document.querySelector('#videosSubmenu');
-            sidebarArrowBlock.onclick = function(event) {
+            let sidebarArrowBlockVerses = document.querySelector('#sidebarArrowBlockVerses');
+            let versesSubmenu = document.querySelector('#versesSubmenu');
+            
+            sidebarArrowBlockVideos.onclick = function(event) {
                 event.preventDefault();
                 videosSubmenu.classList.toggle('active');
-                sidebarArrowBlock.classList.toggle('active');
-                sidebar.classList.toggle('opened-submenu');
+                sidebarArrowBlockVideos.classList.toggle('active');
+                //sidebar.classList.toggle('opened-submenu');
+                //sidebarSubmenuToggle();
             }
+        
+            sidebarArrowBlockVerses.onclick = function(event) {
+                event.preventDefault();
+                versesSubmenu.classList.toggle('active');
+                sidebarArrowBlockVerses.classList.toggle('active');
+                //sidebar.classList.toggle('opened-submenu');
+                //sidebarSubmenuToggle();
+            }
+        
+            /* function sidebarSubmenuToggle() {
+                if (sidebarArrowBlockVideos.classList.contains('active') || sidebarArrowBlockVerses.classList.contains('active')) {
+                    if (!sidebar.classList.contains('opened-submenu')) {
+                        sidebar.classList.add('opened-submenu');
+                    }
+                } else {
+                    sidebar.classList.remove('opened-submenu');
+                }
+            } */
         
         </script>
         <div class="page-container" id="pageContainer">
@@ -296,8 +333,6 @@
                         <a class="videos-tabs-item" id="videosRenaissance" href="videos-renaissance.html">Декадентский реннесанс</a>
                     </div>
                 </div>
-                
-                <!-- <script src="assets/resources/photos/jquery.js"></script> -->
                 <div class="post post-video">        
                     <div class="post-content">
                         <div class="vidia-container">

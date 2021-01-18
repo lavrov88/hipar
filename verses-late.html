@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png"> -->
+    <link type="image/x-icon" rel="shortcut icon" href="assets/images/favicon/favicon-16.ico">
+    <link type="image/png" sizes="16x16" rel="icon" href="assets/images/favicon/favicon-16.png">
+    <link type="image/png" sizes="32x32" rel="icon" href="assets/images/favicon/favicon-32.png">
+    <link type="image/png" sizes="96x96" rel="icon" href="assets/images/favicon/favicon-96.png">
+    <link type="image/png" sizes="120x120" rel="icon" href="assets/images/favicon/favicon-120.png">
+    <link type="image/png" sizes="192x192" rel="icon" href="assets/images/favicon/favicon-192.png">
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <title>Стихи поздней эры</title>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <aside class="sidebar" id="sidebar" swiped-right="toggleSidebar()">
+            <ul class="sidebar-menu">
+                <li><a class="sidebar-menu-item" id="sidebarIndex" href="index.html"><span class="sidebar-menu-item-text">На главную</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarVideos" href="videos.html">
+                        <div class="sidebar-menu-item-text has-submenu">
+                            <div>Видии</div>
+                            <div class="sidebar-arrow-block" id="sidebarArrowBlockVideos"><span class="sidebar-arrow"></span></div>                     
+                        </div>
+                    </a>
+                    <ul class="sidebar-submenu" id="videosSubmenu">
+                        <li><a class="sidebar-submenu-item" href="videos-classic.html">Классика</a></li>
+                        <li><a class="sidebar-submenu-item" href="videos-apogee.html">Апогей декаденства</a></li>
+                        <li><a class="sidebar-submenu-item" href="videos-postdecadence.html">Постдекаденские видии</a></li>
+                        <li><a class="sidebar-submenu-item" href="videos-experiment.html">Экспериментальный период</a></li>
+                        <li><a class="sidebar-submenu-item" href="videos-renaissance.html">Декадентский реннесанс</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-menu-item" id="sidebarPhotos" href="photos.html"><span class="sidebar-menu-item-text">Фоты</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarVerses" href="verses.html">
+                    <div class="sidebar-menu-item-text has-submenu">
+                        <div>Стихи</div>
+                        <div class="sidebar-arrow-block" id="sidebarArrowBlockVerses"><span class="sidebar-arrow"></span></div>                     
+                    </div></a>        
+                    <ul class="sidebar-submenu" id="versesSubmenu">
+                        <li><a class="sidebar-submenu-item" href="verses-classic.html">Классическая эра</a></li>
+                        <li><a class="sidebar-submenu-item" href="verses-late.html">Поздняя эра</a></li>
+                    </ul>
+                </li>
+                <li><a class="sidebar-menu-item" id="sidebarScreams" href="screams.html"><span class="sidebar-menu-item-text">Крики <span class="smaller">(начало всего)</span></span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarDrawings" href="drawings.html"><span class="sidebar-menu-item-text">Рисунки</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarHistory" href="history.html"><span class="sidebar-menu-item-text">История декадентства</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarSymbols" href="symbols.html"><span class="sidebar-menu-item-text">Символы декадентства</span></a></li>
+                <li><a class="sidebar-menu-item" id="sidebarGuestbook" href="guestbook.html"><span class="sidebar-menu-item-text">Гостевая</span></a></li>
+            </ul>
+        
+            <ul class="sidebar-links">
+                <li class="sidebar-links-item">
+                    <a class="sidebar-links-a" href="http://shilo-mylo-man.livejournal.com/" target="_blank">
+                        <img class="sidebar-links-image" src="assets/images/sidebar/lj_logo_300.png" alt="LJ">
+                        <div class="sidebar-links-text">Электроистории от Шило-Мыло Человека</div>
+                    </a>
+                </li>
+                <li class="sidebar-links-item">
+                    <a class="sidebar-links-a" href="https://www.youtube.com/user/ebrilishe" target="_blank">
+                        <img class="sidebar-links-image" src="assets/images/sidebar/youtube_logo_300.png" alt="LJ">
+                        <div class="sidebar-links-text">Официальный канал хипаря</div>
+                    </a>
+                </li>
+            </ul>
+        
+            <div class="quote-container">
+                <blockquote class="quote" id="quote">
+                    <p class="quote-text" id="quoteText">Я чертов ЕВРЕЙ!</p>
+                    <cite class="quote-author" id="quoteAuthor">Хипарь</cite>
+                </blockquote>
+            </div>
+        </aside> 
+        
+        <script> // QUOTES
+            let quoteArr = [
+                {text: "Бля вон он!!", author: "крик в начале погони"},
+                {text: "Бунт! Это адский бунт! АААА!!", author: "декадентское выражение"},
+                {text: "В этом доме жил хипарь", author: "голос за кадром"},
+                {text: "Вася осторожно!!!", author: "голос за кадром"},
+                {text: "Вы все дерьмо!", author: "Хипарь"},
+                {text: "Дави, сука!", author: "имбецилы на рельсах"},
+                {text: "Да на хую я вертел твое время!! Ты посмотри как на улице то пиздато!!!", author: "прохожий на улице"},
+                {text: "Ебись конём рвань!!!", author: "ярость из телефона"},
+                {text: "Еврей украл мои носки!", author: "жертва еврея"},
+                {text: "Здравствуйте, ребята!", author: "ОБЖшник"},
+                {text: "Знаеш Лёня, вот меня после санатория пчёлы вообще не кусают", author: "кореш Лёни"},
+                {text: "Моя кожа рвётся на куски!!", author: "Хипарь"},
+                {text: "Не удобно, нет размаха...", author: "клоун с доской"},
+                {text: "О кабан, стели фраера", author: "корещ кабана"},
+                {text: "Отправляйтесь в ад!", author: "Хипарь"},
+                {text: "Ну это уже просто какое то хамство...", author: "бородатый отмороз"},
+                {text: "Пацаны вы че то не поделили??", author: "голос за кадром"},
+                {text: "Перчатку спиздели!", author: "жертва перчаточника"},
+                {text: "Слыш парниш, не ушатаеш вон того типа за сотыгу?", author: "мутный тип"},
+                {text: "Слыш фраер, хавку жопиш?", author: "блатарь"},
+                {text: "Стой СУКА!!", author: "Хипарь"},
+                {text: "Стоять блять!!", author: "мент в штатском"},
+                {text: "Так, несанкционированная продажа ручек. Это статья 118", author: "мент в штатском"},
+                {text: "Твой брат чорт ****, ПИТУХ!", author: "кавказец в лесу"},
+                {text: "Ты не с тем связался, парень", author: "мстительный тип"},
+                {text: "УООООААААА!!", author: "бунтарский крик"},
+                {text: "Уёбки! Пидоры!!", author: "терпила в лесу"},
+                {text: "Шапку спиздели!!!", author: "жертва шапочника"},
+                {text: "Это 422. Срало не отпидорено. Высылайте халдея.", author: "турист"},
+                {text: "Я вас всех ВЗЪЕБУ!", author: "Хипарь"},
+                {text: "Я ЧЕРТОВ еврей!", author: "Хипарь"},
+            ];
+        
+            let usedQuotes = [];
+            let quoteText = document.getElementById('quoteText');
+            let quoteAuthor = document.getElementById('quoteAuthor');
+        
+            writeNewQuote();    
+        
+            let quote = document.getElementById("quote");
+            quote.addEventListener("click", quoteTransform);
+        
+            function getNewRandomItem(itemsArr, usedArr, type) { // source array, array to share used items, type of items for console log
+                let randomNum;
+                if (usedArr.length < itemsArr.length) {
+                    do {
+                        randomNum = Math.floor(Math.random() * itemsArr.length);
+                    } while (usedArr.includes(randomNum))
+                    usedArr.push(randomNum);
+                    console.log('used ' + type + ': ' + usedArr);
+                    return randomNum;
+                } else {
+                    usedArr.splice(0, usedArr.length);                
+                    randomNum = Math.floor(Math.random() * itemsArr.length);
+                    usedArr.push(randomNum);                
+                    console.log('used ' + type + ': ' + usedArr);
+                    return randomNum;
+                }
+            }
+        
+            function writeNewQuote() {
+                let i = getNewRandomItem(quoteArr, usedQuotes, 'quotes');                
+                quoteText.innerHTML = quoteArr[i].text;
+                quoteAuthor.innerHTML = quoteArr[i].author;
+            }
+        
+            function quoteFadeIn() {
+                quote.classList.add('fade-in');
+                quote.classList.remove('fade-out');
+                writeNewQuote();
+            }
+        
+            function quoteNoFade() {
+                quote.classList.remove('fade-in');
+            }
+        
+            function quoteTransform() {
+                quote.classList.add('fade-out');
+                setTimeout(quoteFadeIn, 100);
+                setTimeout(quoteNoFade, 120);
+            }
+        
+            function toggleSidebar() {
+                if (burgerButton.classList.contains('active')) {
+                    burgerButton.classList.remove('active');
+                    sidebar.classList.remove('active');
+                    pageContainer.classList.remove('darken');
+                    body.classList.remove('lock');
+                } else {
+                    burgerButton.classList.add('active');
+                    sidebar.classList.add('active');
+                    pageContainer.classList.add('darken');
+                    body.classList.add('lock');
+                }
+            }
+        
+            /* SUBMENU */
+        
+            let sidebarArrowBlockVideos = document.querySelector('#sidebarArrowBlockVideos');
+            let videosSubmenu = document.querySelector('#videosSubmenu');
+            let sidebarArrowBlockVerses = document.querySelector('#sidebarArrowBlockVerses');
+            let versesSubmenu = document.querySelector('#versesSubmenu');
+            
+            sidebarArrowBlockVideos.onclick = function(event) {
+                event.preventDefault();
+                videosSubmenu.classList.toggle('active');
+                sidebarArrowBlockVideos.classList.toggle('active');
+                //sidebar.classList.toggle('opened-submenu');
+                //sidebarSubmenuToggle();
+            }
+        
+            sidebarArrowBlockVerses.onclick = function(event) {
+                event.preventDefault();
+                versesSubmenu.classList.toggle('active');
+                sidebarArrowBlockVerses.classList.toggle('active');
+                //sidebar.classList.toggle('opened-submenu');
+                //sidebarSubmenuToggle();
+            }
+        
+            /* function sidebarSubmenuToggle() {
+                if (sidebarArrowBlockVideos.classList.contains('active') || sidebarArrowBlockVerses.classList.contains('active')) {
+                    if (!sidebar.classList.contains('opened-submenu')) {
+                        sidebar.classList.add('opened-submenu');
+                    }
+                } else {
+                    sidebar.classList.remove('opened-submenu');
+                }
+            } */
+        
+        </script>
+        <div class="page-container" id="pageContainer">
+
+            
+            <header class="header" onmouseenter="changeHeaderPic();" onmouseleave="soundCancel();">
+                <div class="header-back" id="headerBack">
+                    <img class="header-back-img" id="headerBackImg" src="assets/images/header/1.jpg" alt="">
+                </div>
+                <div class="header-left">
+                    <a class="main-logo-href" href="index.html">
+                        <img class="main-logo" id="mainLogo" src="assets/images/header/logo.png" alt="Hipar Intertament">
+                    </a>
+                </div>
+                <div class="header-right">
+                    <div class="burger-block" id="burgerBlock">
+                        <div class="burger-button" id="burgerButton"><span></span></div>
+                    </div>
+                </div>
+            
+                <script>
+                    let burgerButton = document.getElementById("burgerButton");
+                    let sidebar = document.getElementById("sidebar");
+                    let pageContainer = document.getElementById("pageContainer");
+                    let body = document.body;
+                    
+                    burgerButton.addEventListener("click", toggleSidebar);
+                    sidebar.addEventListener('swiped-right', function(e) {
+                        if (e.target) {
+                            toggleSidebar();
+                        }
+                    });        
+            
+                    let headerPics = [
+                        '1.jpg',
+                        '2.jpg',
+                        '3.jpg',
+                        '4.jpg',
+                        '5.jpg',
+                        '6.jpg',
+                        '7.jpg',
+                        '8.jpg',
+                        '9.jpg',
+                        '10.jpg',
+                        '11.jpg',
+                        '12.jpg',
+                        '13.jpg',
+                        '14.jpg',
+                        '15.jpg',
+                        '16.jpg',
+                        '17.jpg',
+                        '18.jpg',
+                    ];
+            
+                    let headerSounds = [
+                        'zvuk-vizga-privideniya-kotoroe-poyavilos-iz-niotkuda-22689.mp3',
+                        'kto-to-zadel-pianino-v-zabroshennomu-pustom-dome-22724.mp3',
+                        'horror-metallic-screeches_myvgesvd.mp3',
+                        '1606218088_ujas-5.mp3',
+                        'vnutri-obhvatyivaet-ujas-22012.mp3',
+                        'strashnyezvuki-55.mp3',
+                        'strashnyezvuki-36.mp3',
+                        'strashnyezvuki-38.mp3',
+                        'nastorojennyiy-zvuk-budte-bditelnyi-22607.mp3',
+                        '1605204331_jutkie-4.mp3',
+                    ];
+                    
+                    let timerId;
+                    let headerBack = document.getElementById('headerBack');
+                    let headerBackImg = document.getElementById('headerBackImg');
+                    let burgerBlock = document.getElementById('burgerBlock');
+                    let audio = new Audio();
+                    let usedPics = [];
+                    let usedSounds = [];
+            
+                    function playSound() {
+                        if (headerBack.clientHeight > 100) {
+                            audio.pause();
+                            audio.currentTime = 0.0;  
+                            audio.src = 'assets/resources/sounds/' + headerSounds[getNewRandomItem(headerSounds, usedSounds, 'sounds')];
+                            audio.play();
+                            headerBackImg.style.transition = "transform 30s linear";
+                            headerBackImg.style.transform = "scale(4)";
+                        }
+                    }
+                    
+                    function changeHeaderPic() {
+                        if (headerBack.clientHeight > 100) {
+                            headerBackImg.src = `assets/images/header/${headerPics[getNewRandomItem(headerPics, usedPics, 'pics')]}`;
+                            timerId = setTimeout(playSound, 1500);
+                        }
+                    }
+            
+                    function soundCancel() {
+                        clearTimeout(timerId);
+                        console.log('timer canceled');            
+                        let scaleCancelTimer = setTimeout(() => {                
+                            headerBackImg.style.transition = "transform 0.1s ease";
+                            headerBackImg.style.transform = "scale(1)";
+                        }, 1000);
+                    }
+            
+                </script>    
+            </header>
+
+            <div class="content-container">
+                
+                <h2 class="page-title">Стихи</h2>
+                
+                <div class="verses-tabs-selection">
+                    <div class="verses-tabs-string">
+                        <a class="verses-tabs-item" id="versesClassic" href="verses-classic.html">Классическая эра</a>
+                        <a class="verses-tabs-item" id="versesLate" href="verses-late.html">Поздняя эра</a>
+                    </div>
+                </div>
+                
+                <script>
+                    let contentContainer = document.querySelector('.content-container');
+                    contentContainer.style.maxWidth = '750px';
+                </script>
+                <div class="verses-container verses-container-late">
+                
+                    <div class="post post-verse">
+                        <h3 class="post-title">Культуристы</h3>
+                        
+                        <div class="post-content">
+                            <p>Солнце яркое взошло<br>
+                                Время холода прошло<br>
+                                Праздновать весну пора<br>
+                                Офигенно все, ура!<br>
+                                Девки шубы поснимают<br>
+                                Все о том давно мечтают<br>
+                                Полуголые пойдут<br>
+                                Культуристы штангу жмут<br>
+                                Удивить малышек надо<br>
+                                Пусть бегут за мной, как стадо<br>
+                                Дружно сиськами мотая<br>
+                                Словно на просторах рая<br>
+                                Шашлыки, река, пивас!<br>
+                                Наступил наш звездный час<br>
+                                Всех вокруг отжарим баб<br>
+                                Разорвем их словно жаб!<br>
+                                Кто мешает - изобьем<br>
+                                Шухер лютый наведем<br>
+                                Прет из наc тестостерон<br>
+                                Мощи, ярости вагон!<br>
+                                Стейки с кровью на десерт<br>
+                                И трэш метала концерт<br>
+                                Кач гантелями бицух<br>
+                                Превращение девок в шлюх<br>
+                                Это мы - альфасамцы!<br>
+                                Все атлеты и борцы</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                    
+                    <div class="post post-verse verse-separator">
+                        ***
+                    </div>
+                
+                    <div class="post post-verse">
+                        
+                        <div class="post-content">
+                            <p>Время пришло рассказать не тая<br>
+                                Про домодедовского упыря<br>
+                                Жил-был на свете один молдаван<br>
+                                Продан - фамилия, имя - Иван<br>
+                                
+                                Детство тяжелое, дальше - стройбат<br>
+                                Там он подвергся насмешкам ребят<br>
+                                Продан за сколько? - Шутили над ним<br>
+                                Стал он от этого зол, нелюдим<br>
+                                <br>
+                                После стройбата в столицу попал<br>
+                                Только счастливее там он не стал<br>
+                                Нету прописки и нечего жрать -<br>
+                                Тут бы любой захотел убивать<br>
+                                <br>
+                                Метод нехитрый придумал упырь<br>
+                                Ночью подыскивал тихий пустырь<br>
+                                Грабил прохожих, еду отбирал<br>
+                                Жрать колбасу на бегу начинал<br>
+                                <br>
+                                Раз попытался гипноз применить<br>
+                                Вместо того, чтоб по чайнику бить<br>
+                                Видно, терпила не понял его -<br>
+                                Чуть не убил упыря самого<br>
+                                <br>
+                                Продан с тех пор осторожнее стал<br>
+                                Только ударом гипноз начинал</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                    
+                    <div class="post post-verse verse-separator">
+                        ***
+                    </div>
+                
+                    <div class="post post-verse">
+                        
+                        <div class="post-content">
+                            <p>Жил в Петербурге один психопат<br>
+                                Слыл педерастом-людоедом Ильшат<br>
+                                Или (В хате грязнющей устроил он ад)<br>
+                                Очень любил приготовить поесть<br>
+                                Это была окружающим месть<br>
+                                Скоро по телеку вышел сюжет<br>
+                                Как из людей варил суп людоед<br>
+                                Как профи готовил, имея рецепт<br>
+                                Был экономен, хранил ширпотреп<br>
+                                Лихо ведущий из банки черпал<br>
+                                Суп человеческий там смаковал<br>
+                                Выпили двое, один закусил<br>
+                                Мент подавляя смех пошутил<br>
+                                Вкусный из Эдика суп, или нет?<br>
+                                Трудно Ильшату давался ответ<br>
+                                Пенсии мало, жить тяжело<br>
+                                Вот и пришлось мне готовить его</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                    
+                    <div class="post post-verse verse-separator">
+                        ***
+                    </div>
+                
+                    <div class="post post-verse">
+                        
+                        <div class="post-content">
+                            <p>Маслич с Голузовым Дзюбу сожрали<br>
+                                Долго над этим охранники ржали<br>
+                                Слышали крики и видели дым<br>
+                                Только подумали - ну и хуй с ним<br>
+                                <br>
+                                Утром начальнику срочный доклад<br>
+                                В камере 9 устроили ад<br>
+                                В гневе начальство клянет похуизм<br>
+                                Как проморгали вы каннибализм?!<br>
+                                <br>
+                                Крови ведро утопили в толчке!<br>
+                                Печень и сердце варили в бачке!<br>
+                                Жгли одеяло всю ночь напролет!<br>
+                                Быстро пишите подробный отчет!<br>
+                                <br>
+                                Пишут охранники - сей инцидент<br>
+                                Вызвал один неучтенный момент<br>
+                                Дым не могли мы заметить никак<br>
+                                В этом виновен обычный сквозняк!</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                    
+                    <div class="post post-verse verse-separator">
+                        ***
+                    </div>
+                
+                    <div class="post post-verse">
+                        
+                        <div class="post-content">
+                            <p>Как-то в Балашихе злобный амбал<br>
+                                Людей стал гасить, а их трупы ебал.<br>
+                                Очень фантастику этот тип уважал<br>
+                                Автором был он книжки старфал.<br>
+                                Как командор в книге своей<br>
+                                Думал, что мочит он геев, блядей.<br>
+                                Ярым был гомофобом Сергей,<br>
+                                Трахая трупы, считал, что не гей.<br>
+                                Педик однажды к нему подкатил,<br>
+                                Трахнуться в жопу ему предложил<br>
+                                Был возмущён предложением Сергей,<br>
+                                Прикончив, ебать приступил поскорей</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                    
+                    <div class="post post-verse verse-separator">
+                        ***
+                    </div>
+                
+                    <div class="post post-verse">
+                        <h3 class="post-title">Коллега</h3>
+                        
+                        <div class="post-content">
+                            <p>Сидел со мной рядом козёл<br>
+                                Мобилу оставил, ушёл<br>
+                                Звонила аж 10 минут,<br>
+                                Придёт мудака уебу...<br>
+                                Противно всегда он звучал,<br>
+                                Отвратно гад сопли глотал<br>
+                                Добавил в еду цианид,<br>
+                                Пусть больше говнюк не звучит!</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                    
+                    <div class="post post-verse verse-separator">
+                        ***
+                    </div>
+                
+                    <div class="post post-verse">
+                        <h3 class="post-title">Садисты</h3>
+                        
+                        <div class="post-content">
+                            <p>Эдик как-то попал в ад,<br>
+                                Зверски запытали суки.<br>
+                                Разрывали хуем зад,<br>
+                                Яростно ломали руки.<br>
+                                Гады грязным сапогом выбивали зубы,<br>
+                                А на просьбы пощадить посылали грубо.<br>
+                                На вопрос "за что, скоты?" Молча избивали<br>
+                                Так как больше нет зубов в рот хуи совали.<br>
+                                Телефон вдруг зазвонил и раздалось в трубке<br>
+                                "Блядь, это не тот, козлы, вы тупые суки!"<br>
+                                Эдуард, ты нас прости, это все ошибка,<br>
+                                Но чтоб больше не дерзил мы продолжим пытку...</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                    
+                    <div class="post post-verse verse-separator">
+                        ***
+                    </div>
+                
+                    <div class="post post-verse">
+                        <h3 class="post-title">Заир</h3>
+                        
+                        <div class="post-content">
+                            <p>Я в Заире совершал перелет<br>
+                                Самый страшный в истории взлет<br>
+                                Разогнался и на рынок попал,<br>
+                                Черномазых на тот свет прописал<br>
+                                200 фрагов и столько же травм<br>
+                                Их давил как большой диназавр<br>
+                                Ну а после огонь запылал<br>
+                                Рынок дымил как огромный мангал<br>
+                                "<span class="text-with-prompt">Lynchage!<span class="hidden-prompt">Линша́ж!</span></span>" - рвали глотки скоты<br>
+                                Не хватило на вас тесноты.<br>
+                                Осудили на два года тюрьмы<br>
+                                По три дня за терпилу, увы!</p>
+                        </div>
+                    </div> <!-- post-verse --> 
+                    
+                    <div class="post post-verse verse-separator">
+                        ***
+                    </div>
+                    
+                    <div class="post post-verse">
+                        
+                        <div class="post-content">
+                            <p>Я шел по тропинке с обрезом<br>
+                                Тропинка вела меня лесом<br>
+                                Был парень я ловкий, ребята<br>
+                                И сальто мог сделать когда-то<br>
+                                В костюме пожарном назад...<br>
+                                Врагов отправлял прямо в ад!<br>
+                                Из лесу вышел огромный негрила<br>
+                                Сразу почувствовал я его силу<br>
+                                Долго не думал - взвел оба курка<br>
+                                Со смаком увидел я страх мудака<br>
+                                Грохнул выстрел, негр орал<br>
+                                Я его лишь напугал<br>
+                                Поиграть я с ним хотел<br>
+                                Смаковать как охуел<br>
+                                Прежде чем пришью урода<br>
+                                Все скучнее год от года<br>
+                                Просто тупо всех валить<br>
+                                Лучше яростно избить!<br>
+                                Пиздил гада сапогами<br>
+                                А потом месил ножами<br>
+                                Жалко быстро он подох<br>
+                                В пасть ему набил я мох<br>
+                                Сделал селфи с трупаком<br>
+                                Уши срезал тесаком<br>
+                                Сердце с почками сварил<br>
+                                Из горла водяру пил<br>
+                                Вот такой я отморозок<br>
+                                И танцую средь березок<br>
+                                Солнце светит, весел я<br>
+                                Охуительный день, бля!<br>
+                                Взял у негра кошелек<br>
+                                Тыщу долларов извлек<br>
+                                Буду месяц я бухать<br>
+                                Жарить баб и ликовать<br>
+                                Ох спасибо мертвяку<br>
+                                За покой его бухну!</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                    
+                    <div class="post post-verse verse-separator">
+                        ***
+                    </div>
+                
+                    <div class="post post-verse">
+                        
+                        <div class="post-content">
+                            <p>Я в Сибири угнал самолёт,<br>
+                                В Пакистане казалось зачёт.<br>
+                                Приказал экипажу: туда!<br>
+                                Оказалось ваще там пизда<br>
+                                <br>
+                                Не давали сначала и сесть<br>
+                                Потом дали, но сделали месть<br>
+                                Присудили пожизненный срок<br>
+                                Будет мол террористам урок<br>
+                                <br>
+                                Посадили в клоповник к скотам<br>
+                                Думал там я концы и отдам<br>
+                                От жары через край охуел<br>
+                                А Петров - тот вобще околел<br>
+                                <br>
+                                Отсидели по восемь с братвой<br>
+                                Слава богу забрали домой<br>
+                                Там осталась лишь пара хохлов<br>
+                                В незалэжной не ждали скотов</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                    
+                    <div class="post post-verse verse-separator">
+                        ***
+                    </div>
+                
+                    <div class="post post-verse">
+                        
+                        <div class="post-content">
+                            <p>В 90х пошел в институт<br>
+                                Думал стану очень богатым<br>
+                                Оказалось меня наебут,<br>
+                                Как узнал - бросил сразу шарагу...<br>
+                                <br>
+                                Времена таковы что никак<br>
+                                В стороне нельзя оставаться<br>
+                                Надо брать за рога быка<br>
+                                Бизнес открыть, развиваться<br>
+                                <br>
+                                Преуспеть я старался как мог<br>
+                                В гаражах основал мастерскую<br>
+                                Но суров был судьбы моей рок<br>
+                                И подумалось - че я очкую?<br>
+                                <br>
+                                Убедил компаньона - пора<br>
+                                По серьезному взяться за дело<br>
+                                Состоялась покупка ствола<br>
+                                А потом понеслось, полетело..<br>
+                                <br>
+                                По объяве звонили типам<br>
+                                Продаете авто? Покупаем!<br>
+                                Только ты подкати к гаражам<br>
+                                Там проверим и сразу башляем<br>
+                                <br>
+                                Заводили беднягу в гараж<br>
+                                Расставался там с жизнью терпила<br>
+                                Выстрел в спину - был прост метод наш<br>
+                                А под полом отрыли могилу<br>
+                                <br>
+                                Всех валили мы лихо подряд<br>
+                                Продавали мерсы́ бандюганов<br>
+                                Но попался однажды нам гад<br>
+                                В телефоне АОН был поганый<br>
+                                <br>
+                                По нему нас спалили менты<br>
+                                И лишен навсегда я свободы<br>
+                                Я своей тут не вижу вины -<br>
+                                Ну, мочил. - Все мочили в те годы!<br>
+                                <br>
+                                Не спешите меня обвинять<br>
+                                Вот свела две машины дорога<br>
+                                Чья вина в дтп, как понять?<br>
+                                Я считаю - виновны в нем оба!</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                    
+                    <div class="post post-verse verse-separator last">
+                        ***
+                    </div>
+                
+                    <div class="post post-verse">
+                        
+                        <div class="post-content">
+                            <p>Я в гонконге мурайвейник поджег<br>
+                                Азиатов на погибель обрек<br>
+                                Долго ветер пеплом играл<br>
+                                Вихри из него развевал<br>
+                                <br>
+                                Был я вроде трезв, а не пьян<br>
+                                В психике похоже - изъян<br>
+                                Плотно поселились, скоты<br>
+                                Вырвал вас я из тесноты<br>
+                                <br>
+                                Жили как вонючая тля<br>
+                                В тесноте сортиров блюя<br>
+                                Жарили друг друга в поту<br>
+                                Пидоры на каждом углу<br>
+                                <br>
+                                Негде растянуться и лечь..<br>
+                                Вот и отправил вас в печь<br>
+                                Жарко в гонконге опять<br>
+                                Все же полегче дышать<br>
+                                тих про А. Оноприенко<br>
+                                Сделал из ружья обрез.<br>
+                                Всем пизда, держитесь!<br>
+                                Если я в ваш дом залез<br>
+                                Лучше помолитесь...<br>
+                                <br>
+                                Добрый дядя Толя дома<br>
+                                На охоте - злобный<br>
+                                Без убийства и погрома,<br>
+                                Словно волк - голодный<br>
+                                <br>
+                                В ахуе менты стоят<br>
+                                Возле трупов жутких<br>
+                                "Терминатор!" - говорят -<br>
+                                "Поработал круто!"<br>
+                                <br>
+                                Зря в детдом свели меня<br>
+                                Брат с отцом родные -<br>
+                                Знали бы, что я маньяк -<br>
+                                Стали бы седые<br>
+                                <br>
+                                ПсихопАтией с тех пор<br>
+                                Лютой я страдаю<br>
+                                Лом, отвертка и топор<br>
+                                Ими добиваю!<br>
+                                <br>
+                                Похуй мне кого валить<br>
+                                Лишь бы сразу много<br>
+                                Начинаю я палить<br>
+                                Прямиком с порога<br>
+                                <br>
+                                Так менты зассали раз<br>
+                                Что вояк пригнали<br>
+                                Разыскать меня приказ<br>
+                                Строгий им отдали<br>
+                                <br>
+                                Ловкость я тогда решил<br>
+                                Доказать свою им<br>
+                                И терпил в тот раз пришил<br>
+                                Сразу десять с хуем!<br>
+                                <br>
+                                Дерзко крест на карте я<br>
+                                Трупами отметил<br>
+                                Пусть обловятся меня<br>
+                                Все менты на свете!</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                
+                </div> <!-- verses-container -->
+                
+                <div style="margin-bottom: 2rem;"></div>
+                
+                
+                <script> //Selecting of active item in sidebar
+                    let element = document.getElementById("sidebarVerses");
+                    element.classList.add("active");
+                    let section = document.getElementById("versesLate");
+                    section.classList.add("active");
+                </script>
+            </div>
+
+            <footer class="footer">
+                    <div class="footer-content">
+                        <span class="copyright-1">© Hipar Intertament, 2004-<span id="copyrightYear">2021</span></span><span class="copyright-2">Тебе пиздец!</span>
+                    </div>
+            </footer>
+            
+            <script> //change year to current
+                let today = new Date();
+                let year = today.getFullYear();
+                let copyrightYear = document.getElementById('copyrightYear');
+                copyrightYear.innerHTML = year;
+            </script>
+            
+            <script> //vidia preview generation
+                let ytVideos = document.getElementsByClassName('youtube');
+                let activeSection;
+                if (document.querySelector('#sidebarVideos').classList.contains('active')) {
+                    console.log('inVideos = true');
+                    activeSection = document.querySelector('.videos-tabs-item.active').id;
+                }
+                console.log('active section: ' + activeSection);
+            
+                for (let i = 0; i < ytVideos.length; i++) {
+                    let ytId = ytVideos[i].getAttribute('id');
+                    let ytPreview = document.createElement('img');
+                    let ytPlayButton = document.createElement('img');
+                    ytPreview.setAttribute('class', 'vidia-preview');
+            
+                    if (activeSection === 'videosClassic') {
+                        ytPreview.setAttribute('src', 'assets/resources/videos/classic/' + ytId + '.jpg')
+                    } else if (activeSection === 'videosApogee') {
+                        ytPreview.setAttribute('src', 'assets/resources/videos/apogee/' + ytId + '.jpg')
+                    } else if (activeSection === 'videosPostdecadence') {
+                        ytPreview.setAttribute('src', 'assets/resources/videos/postdecadence/' + ytId + '.jpg')
+                    } else if (activeSection === 'videosExperiment') {
+                        ytPreview.setAttribute('src', 'assets/resources/videos/experiment/' + ytId + '.jpg')
+                    } else if (activeSection === 'videosRenaissance') {
+                        ytPreview.setAttribute('src', 'assets/resources/videos/renaissance/' + ytId + '.jpg')
+                    }
+            
+                    ytPreview.setAttribute('alt', '');
+                    ytVideos[i].appendChild(ytPreview);
+                    ytPlayButton.setAttribute('class', 'vidia-preview-btn');
+                    ytPlayButton.setAttribute('src', 'assets/images/yt-btn.png');
+                    ytPlayButton.setAttribute('alt', '');
+                    ytVideos[i].appendChild(ytPlayButton);
+            
+                    ytVideos[i].onclick = function () {
+                        this.innerHTML = '<iframe src="https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0" allowfullscreen allow="autoplay"></iframe>';
+                    }
+                }
+            </script>
+
+        </div> 
+    </div>
+    
+    <div class="lightbox">
+        <div class="overlay"></div>
+        
+        <div class="flex-container">
+            <figure class="gallery-container">
+                <div class="img-container" id="imgContainer">
+                    <img src="" alt="Фото">
+                    <div class="prev"><span><</span></div>
+                    <div class="next"><span>></span></div>
+                </div>
+                <div class="img-description-container"></div>
+            </figure>
+        </div>
+    </div>
+    
+    <script> //lightbox without jquery
+        let li = document.querySelectorAll('.photos-list > li'),
+            links = document.querySelectorAll('.photos-list > li > a'),
+            lightbox = document.querySelector('.lightbox'),
+            overlay = document.querySelector('.overlay'),
+            imgContainer = document.querySelector('#imgContainer'),
+            prev = document.querySelector('.prev'),
+            next = document.querySelector('.next'),
+            liIndex,
+            targetImg,
+            timerIdGallery;
+        
+        for (let i = 0; i < links.length; i++) {
+            links[i].onclick = function(event) {
+                if (headerBack.clientHeight > 100) { //check desktop client
+                    event.preventDefault();
+                    liIndex = i;
+                    targetImg = this.getAttribute('href');
+                    lightbox.querySelector('img').setAttribute('src', targetImg);
+                    fadeIn();             
+                }
+            }
+        }
+    
+        function fadeIn() {
+            lightbox.style.display = 'block';
+            imgContainer.style.transform = 'scale(0.7)';
+            imgContainer.style.opacity = '0%';
+            imgContainer.style.transition = 'all 0.3s ease';
+            
+            let fadeInTimerId = setTimeout(() => {
+                overlay.style.opacity = '100%';
+                imgContainer.style.transform = 'scale(1)';
+                imgContainer.style.opacity = '100%';
+                
+                let fadeInTimerId = setTimeout(() => {
+                    imgContainer.style.transition = 'all 0.1s linear'; //transform for fast changing left-right
+                }, 320);
+    
+            }, 20);
+        }
+    
+        function fadeOut() {
+            imgContainer.style.transition = 'all 0.2s ease';
+    
+            let fadeOutTimerId = setTimeout(() => {
+                imgContainer.style.transform = 'scale(0.3)';
+                imgContainer.style.opacity = '0%';
+                overlay.style.opacity = '0%';
+    
+                let fadeOutTimerId = setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 320);
+    
+            }, 20);
+        }
+    
+        overlay.onclick = function() {
+            fadeOut();
+        }
+    
+        document.querySelector('#imgContainer > img').onclick = function() {
+            fadeOut();
+        }
+    
+        next.onclick = function() {
+            imgContainer.style.transform = 'translateX(-150vh)'; //fade to left
+    
+            let newImgTimerId = setTimeout(() => {
+                if (liIndex < li.length - 1) {
+                    targetImg = links[liIndex + 1].getAttribute('href');
+                    lightbox.querySelector('img').setAttribute('src', targetImg);
+                    liIndex++;
+                } else {
+                    targetImg = links[0].getAttribute('href');
+                    lightbox.querySelector('img').setAttribute('src', targetImg);
+                    liIndex = 0;
+                }
+    
+                imgContainer.style.transition = 'transform 0s'; //after changing img
+                imgContainer.style.transform = 'translateX(150vh)'; //go to right
+                let newImgTimerId = setTimeout(() => {
+                    imgContainer.style.transition = 'transform 0.1s linear';
+                    imgContainer.style.transform = 'translateX(0vh)'; //and come from right
+                }, 20);
+            }, 120);        
+        }
+    
+        prev.onclick = function() {
+            imgContainer.style.transform = 'translateX(150vh)'; //fade to right
+    
+            let newImgTimerId = setTimeout(() => {
+                if (liIndex > 0) {
+                    targetImg = links[liIndex - 1].getAttribute('href');
+                    lightbox.querySelector('img').setAttribute('src', targetImg);
+                    liIndex--;
+                } else {
+                    targetImg = links[li.length - 1].getAttribute('href');
+                    lightbox.querySelector('img').setAttribute('src', targetImg);
+                    liIndex = li.length - 1;
+                } 
+    
+                imgContainer.style.transition = 'transform 0s'; //after changing img
+                imgContainer.style.transform = 'translateX(-150vh)'; //go to left
+                let newImgTimerId = setTimeout(() => {
+                    imgContainer.style.transition = 'transform 0.1s linear';
+                    imgContainer.style.transform = 'translateX(0vh)'; //and come from left
+                }, 20);
+            }, 120);        
+        }
+    </script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
