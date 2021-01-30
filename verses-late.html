@@ -702,9 +702,20 @@
                                 Негде растянуться и лечь..<br>
                                 Вот и отправил вас в печь<br>
                                 Жарко в гонконге опять<br>
-                                Все же полегче дышать<br>
-                                тих про А. Оноприенко<br>
-                                Сделал из ружья обрез.<br>
+                                Все же полегче дышать</p>
+                        </div>
+                    </div> <!-- post-verse -->
+                
+                    <div class="post post-verse verse-separator last">
+                        ***
+                    </div>
+                
+                    <div class="post post-verse">
+                
+                        <h3 class="post-title">Стих про А. Оноприенко</h3>
+                
+                        <div class="post-content">
+                            <p>Сделал из ружья обрез.<br>
                                 Всем пизда, держитесь!<br>
                                 Если я в ваш дом залез<br>
                                 Лучше помолитесь...<br>
@@ -817,8 +828,55 @@
                 }
             </script>
 
-        </div> 
-    </div>
+        </div>
+        <div id="cookiesPopup" class="cookies-popup disabled">
+        
+            <div class="cookies-left">
+                <div>
+                    <h3 class="cookies-title">Этот сайт использует cookies!</h3>
+                    <p class="cookies-text">Это значит, что нажимая кнопку ты соглашаешся что хипарь может придти к тебе домой, дать по роже и забрать себе любое твое барахло.</p>
+                </div>        
+            </div>
+        
+            <div class="cookies-right">
+                <button id="cookiesBtn" class="cookies-btn">Ок, только отъебись</button>
+            </div>
+        
+        </div>
+        
+        <script>
+            let cookiesBtn = document.querySelector('#cookiesBtn'),
+                cookiesPopup = document.querySelector('#cookiesPopup');
+        
+            cookiesBtn.addEventListener('click', function () {
+                cookiesPopup.classList.add('disabled');
+                let datePushed = +(new Date);
+                localStorage.setItem('datePushed', datePushed);
+            });
+        
+            window.onload = function() {
+                checkCookies();
+            }
+        
+            function checkCookies() {
+                let nowDate = +(new Date),
+                    datePushed = 0,
+                    week = 1000 * 3600 * 24 * 7;
+        
+                if (localStorage.getItem('datePushed')) {
+                    datePushed = +localStorage.getItem('datePushed');
+                }
+        
+                let weeksPast = (nowDate - datePushed) / week;
+                console.log(`weeks past after cookies accept: ${weeksPast}`);
+        
+                if (weeksPast > 1) {
+                    setTimeout(() => {
+                        cookiesPopup.classList.remove('disabled');
+                    }, 2000);
+                } 
+            }
+        </script>    </div>
     
     <div class="lightbox">
         <div class="overlay"></div>
